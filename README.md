@@ -1,6 +1,7 @@
 # TimesURL
 The implementation of "TimesURL: Self-supervised Contrastive Learning for Universal Time Series Representation Learning"
 
+Appendix: https://github.com/Alrash/TimesURL/blob/main/AAAI24_appendix.pdf
 ## Codes
 This code is based on [TS2Vec](https://github.com/yuezhihan/ts2vec).
 
