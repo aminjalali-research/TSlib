@@ -157,6 +157,8 @@ if __name__ == '__main__':
             out, eval_res = tasks.eval_forecasting(model, data, train_slice, valid_slice, test_slice, scaler, pred_lens, n_covariate_cols)
         elif task_type == 'anomaly_detection':
             out, eval_res = tasks.eval_anomaly_detection(model, train_data_task, train_labels, train_timestamps, test_data, test_labels, test_timestamps, delay)
+        elif task_type == 'imputation':
+            out, eval_res = tasks.eval_imputation(model, data, test_slice, args.missing_rate, n_covariate_cols, device)
         else:
             assert False
 
