@@ -19,6 +19,7 @@ This code is based on [TS2Vec](https://github.com/yuezhihan/ts2vec).
 ```
 ## Acknowledgement
 [TS2Vec](https://github.com/yuezhihan/ts2vec)
+
 [FrAug](https://anonymous.4open.science/r/Fraug-more-results-1785/README.md)
 
 ## Email
