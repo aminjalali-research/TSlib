@@ -8,12 +8,18 @@ This code is based on [TS2Vec](https://github.com/yuezhihan/ts2vec).
 ## Citation
 ```
 @inproceedings{liu2024timesurl,
-  title = {TimesURL: Self-supervised Contrastive Learning for Universal Time Series Representation Learning},
-  author = {Liu, Jiexi and Chen, Songcan},
-  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  year = {2024}
+  title={Timesurl: Self-supervised contrastive learning for universal time series representation learning},
+  author={Liu, Jiexi and Chen, Songcan},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={12},
+  pages={13918--13926},
+  year={2024}
 }
 ```
+## Acknowledgement
+[TS2Vec](https://github.com/yuezhihan/ts2vec)
+[FrAug](https://anonymous.4open.science/r/Fraug-more-results-1785/README.md)
 
 ## Email
 ```
