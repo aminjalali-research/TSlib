@@ -1,5 +1,6 @@
 # TimesURL
 The implementation of "TimesURL: Self-supervised Contrastive Learning for Universal Time Series Representation Learning"
+<img src="https://github.com/Alrash/TimesURL/assets/30361341/e80fd603-c3ca-49a7-a00f-87dfd5327d2a"  />
 
 Paper: [Arxiv](https://arxiv.org/abs/2312.15709) or  [AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/29299/30450) 
 
