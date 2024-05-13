@@ -1,7 +1,7 @@
 # TimesURL
 The implementation of "TimesURL: Self-supervised Contrastive Learning for Universal Time Series Representation Learning"
 
-Paper: [Arxiv](https://arxiv.org/abs/2312.15709) or AAAI Official: [AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/29299/30450) 
+Paper: [Arxiv](https://arxiv.org/abs/2312.15709) or  [AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/29299/30450) 
 
 Video: [Video](https://underline.io/lecture/93776-timesurl-self-supervised-contrastive-learning-for-universal-time-series-representation-learning-video)
 
