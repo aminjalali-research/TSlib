@@ -1,0 +1,24 @@
+{
+  "accuracy_champion": {
+    "model": "Ti_MAE",
+    "dataset": "AtrialFibrillation",
+    "accuracy": 0.4667,
+    "time_per_epoch": 0.0,
+    "peak_memory_mb": 2552.0,
+    "flops_per_epoch": 102028880.82050774
+  },
+  "flops_efficiency_champion": {
+    "model": "MF_CLR",
+    "dataset": "AtrialFibrillation",
+    "flops_efficiency": 11.30788419859713,
+    "accuracy": 0.3333,
+    "flops_per_epoch": 29475010.014813345
+  },
+  "memory_efficiency_champion": {
+    "model": "TNC",
+    "dataset": "AtrialFibrillation",
+    "memory_efficiency": 0.5580381471389646,
+    "accuracy": 0.4,
+    "peak_memory_mb": 734.0
+  }
+}

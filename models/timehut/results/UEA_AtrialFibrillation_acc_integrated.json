@@ -1,0 +1,9 @@
+{
+  "scenario": "baseline",
+  "amc_setting": null,
+  "temp_setting": null,
+  "result": {
+    "acc": 0.13333333333333333,
+    "auprc": 0.32331205831205834
+  }
+}

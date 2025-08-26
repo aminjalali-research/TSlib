@@ -1,0 +1,11 @@
+{
+  "method": "cosine_annealing",
+  "best_params": {
+    "min_tau": 0.1332127252495836,
+    "max_tau": 0.6789823833346273,
+    "t_max": 18.887211448719945
+  },
+  "best_accuracy": 0.9825072886297376,
+  "optimization_steps": 10,
+  "optimization_time": 85.25675368309021
+}

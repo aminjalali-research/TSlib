@@ -1,0 +1,110 @@
+{
+  "benchmark_info": {
+    "timestamp": "2025-08-26T10:51:20.873407",
+    "total_time_seconds": 12.966026544570923,
+    "total_time_formatted": "0.2 minutes",
+    "models_tested": [
+      "TS2vec"
+    ],
+    "datasets_tested": [
+      "AtrialFibrillation"
+    ],
+    "configuration": {
+      "models": [
+        "TS2vec"
+      ],
+      "datasets": [
+        "AtrialFibrillation"
+      ],
+      "use_original_iterations": true,
+      "epochs": null,
+      "batch_size": 8,
+      "enable_optimization": true,
+      "optimization_mode": "fair",
+      "timeout_minutes": 200,
+      "enable_gpu_monitoring": true,
+      "save_intermediate_results": false,
+      "fair_comparison_mode": true
+    }
+  },
+  "summary_statistics": {
+    "total_experiments": 1,
+    "successful_experiments": 1,
+    "success_rate": 1.0,
+    "average_accuracy": 0.26666666666666666,
+    "best_accuracy": 0.26666666666666666,
+    "worst_accuracy": 0.26666666666666666
+  },
+  "model_performance": {
+    "TS2vec": {
+      "average_accuracy": 0.26666666666666666,
+      "best_accuracy": 0.26666666666666666,
+      "datasets_tested": 1,
+      "results_by_dataset": {
+        "AtrialFibrillation": 0.26666666666666666
+      }
+    }
+  },
+  "dataset_performance": {
+    "AtrialFibrillation": {
+      "average_accuracy": 0.26666666666666666,
+      "best_accuracy": 0.26666666666666666,
+      "best_model": "TS2vec",
+      "models_tested": 1,
+      "results_by_model": {
+        "TS2vec": 0.26666666666666666
+      }
+    }
+  },
+  "detailed_results": [
+    {
+      "model_name": "TS2vec",
+      "dataset": "AtrialFibrillation",
+      "task_type": "classification",
+      "experiment_id": "TS2vec_AtrialFibrillation_1756219867",
+      "timestamp": "2025-08-26T10:51:20.873381",
+      "run_id": 0,
+      "accuracy": 0.26666666666666666,
+      "auprc": 0.36557775557775557,
+      "auroc": 0.0,
+      "f1_score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "final_loss": 0.0,
+      "best_loss": 0.0,
+      "loss_history": [],
+      "total_training_time": 12.965983867645264,
+      "training_time_per_epoch": 10.677281,
+      "inference_time": 0.0,
+      "epochs_completed": 200,
+      "convergence_epoch": 0,
+      "model_parameters": 0,
+      "model_size_mb": 0.0,
+      "hyperparameters": {
+        "batch_size": 8,
+        "learning_rate": 0.001,
+        "epochs": null,
+        "seed": 42,
+        "max_threads": 8,
+        "gpu": 0,
+        "device": "cpu",
+        "max_train_length": 1000,
+        "irregular_ratio": 0.0,
+        "eval_protocol": "svm",
+        "repr_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "temporal_unit": 0,
+        "n_iters": 200,
+        "save_every": null
+      },
+      "gpu_used": false,
+      "peak_memory_mb": 0.0,
+      "model_path": "",
+      "log_path": "",
+      "custom_metrics": {},
+      "status": "success",
+      "error_message": ""
+    }
+  ]
+}

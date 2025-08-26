@@ -1,0 +1,13 @@
+{
+  "scenario": "amc_only",
+  "amc_setting": {
+    "amc_instance": 0.5,
+    "amc_temporal": 0.3,
+    "amc_margin": 0.5
+  },
+  "temp_setting": null,
+  "result": {
+    "acc": 0.06666666666666667,
+    "auprc": 0.2661050061050061
+  }
+}

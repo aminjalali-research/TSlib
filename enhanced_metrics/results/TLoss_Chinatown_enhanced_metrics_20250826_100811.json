@@ -1,0 +1,81 @@
+{
+  "system_info": {
+    "timestamp": "2025-08-26 10:05:28 UTC",
+    "cpu_count": 16,
+    "memory_total_gb": 15.3,
+    "python_version": "3.8.20",
+    "working_directory": "/home/amin/TSlib",
+    "platform": "linux",
+    "cpu_freq_max_mhz": 4825.0,
+    "cpu_freq_current_mhz": 849.7998125,
+    "torch_version": "2.4.1+cu121",
+    "cuda_available": true,
+    "cuda_version": "12.1",
+    "cuda_device_count": 1
+  },
+  "gpu_info": {
+    "gpu_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "gpu_memory_total_mb": 24576.0,
+    "gpu_memory_total_gb": 24.0,
+    "gpu_driver_version": "535.247.01",
+    "gpu_uuid": "GPU-98388890-c344-6be8-bc1d-af6494d63e72",
+    "initial_memory_mb": 425.0,
+    "initial_temperature": 50.0
+  },
+  "start_time": 1756217128.514536,
+  "end_time": 1756217291.0185049,
+  "total_runtime": 162.5,
+  "model_metrics": {
+    "model": "TLoss",
+    "dataset": "Chinatown",
+    "return_code": 0,
+    "status": "success",
+    "stdout_lines": 49,
+    "stderr_lines": 1
+  },
+  "performance_metrics": {
+    "accuracy": 0.7668,
+    "training_time": 161.9,
+    "gpu_memory_used": 15.0,
+    "flops_per_epoch": 56320639.078537405
+  },
+  "resource_metrics": {
+    "peak_gpu_memory_mb": 697.0,
+    "avg_gpu_memory_mb": 689.6101694915254,
+    "std_gpu_memory_mb": 31.218756285910377,
+    "avg_gpu_temperature_c": 44.17627118644068,
+    "max_gpu_temperature_c": 52.0,
+    "avg_gpu_utilization_percent": 2.5661016949152544,
+    "max_gpu_utilization_percent": 38.0,
+    "monitoring_samples_collected": 295
+  },
+  "computational_metrics": {},
+  "efficiency_metrics": {},
+  "training_dynamics": {},
+  "enhanced_metrics": {
+    "model_name": "TLoss",
+    "dataset_name": "Chinatown",
+    "model_family": "MF-CLR",
+    "dataset_type": "UCR",
+    "accuracy": 0.7668,
+    "time_per_epoch_seconds": 0.0,
+    "peak_gpu_memory_mb": 697.0,
+    "flops_per_epoch": 56320639.078537405,
+    "epochs_completed": 1,
+    "total_training_time": 161.9,
+    "accuracy_per_second": 0.004718769230769231,
+    "total_gflops": 0.056320639078537404,
+    "flops_efficiency": 13.614902326138752,
+    "gflops_per_second": 0.0003465885481756148,
+    "peak_gpu_memory_gb": 0.6806640625,
+    "memory_efficiency": 1.1265469153515064,
+    "memory_per_epoch_mb": 697.0,
+    "runtime_class": "slow",
+    "performance_class": "moderate",
+    "memory_class": "medium",
+    "computational_intensity": "unknown",
+    "estimated_energy_kwh": 0.00023166195856873825,
+    "energy_efficiency": 3309.9953256782846
+  }
+}

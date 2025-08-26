@@ -1,0 +1,15 @@
+{
+  "scenario": "temp_sigmoid",
+  "amc_setting": null,
+  "temp_setting": {
+    "method": "sigmoid_decay",
+    "min_tau": 0.19189463243939403,
+    "max_tau": 0.8776227250900397,
+    "t_max": 33.11365057870121,
+    "steepness": 1.0
+  },
+  "result": {
+    "acc": 0.9825072886297376,
+    "auprc": 0.9978456601436207
+  }
+}

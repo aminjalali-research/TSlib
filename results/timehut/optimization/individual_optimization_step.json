@@ -1,0 +1,13 @@
+{
+  "method": "step_decay",
+  "best_params": {
+    "min_tau": 0.17681674472166548,
+    "max_tau": 0.6834521157323913,
+    "t_max": 21.81393969605047,
+    "step_size": 3,
+    "gamma": 0.6594290595510863
+  },
+  "best_accuracy": 0.9825072886297376,
+  "optimization_steps": 10,
+  "optimization_time": 85.6207275390625
+}

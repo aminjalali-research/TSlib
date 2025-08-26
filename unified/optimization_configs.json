@@ -1,0 +1,188 @@
+{
+  "ts2vec_baseline_params": {
+    "Chinatown": {
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "n_iters": 200,
+      "seed": 42,
+      "max_train_length": 3000,
+      "repr_dims": 320,
+      "max_threads": 8,
+      "irregular_ratio": 0.0,
+      "eval_protocol": "svm",
+      "gpu": 0
+    },
+    "AtrialFibrillation": {
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "n_iters": 200,
+      "seed": 42,
+      "max_train_length": 3000,
+      "repr_dims": 320,
+      "max_threads": 8,
+      "irregular_ratio": 0.0,
+      "eval_protocol": "svm",
+      "gpu": 0
+    },
+    "MotorImagery": {
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "n_iters": 200,
+      "seed": 42,
+      "max_train_length": 3000,
+      "repr_dims": 320,
+      "max_threads": 8,
+      "irregular_ratio": 0.0,
+      "eval_protocol": "svm",
+      "gpu": 0
+    },
+    "StandWalkJump": {
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "n_iters": 200,
+      "seed": 42,
+      "max_train_length": 3000,
+      "repr_dims": 320,
+      "max_threads": 8,
+      "irregular_ratio": 0.0,
+      "eval_protocol": "svm",
+      "gpu": 0
+    },
+    "EigenWorms": {
+      "batch_size": 8,
+      "learning_rate": 0.001,
+      "n_iters": 600,
+      "seed": 42,
+      "max_train_length": 3000,
+      "repr_dims": 320,
+      "max_threads": 8,
+      "irregular_ratio": 0.0,
+      "eval_protocol": "svm",
+      "gpu": 0
+    }
+  },
+  "optimized_params": {
+    "TS2vec": {
+      "Chinatown": {
+        "batch_size": 8,
+        "learning_rate": 0.001,
+        "n_iters": 200,
+        "repr_dims": 320,
+        "seed": 42
+      },
+      "AtrialFibrillation": {
+        "batch_size": 8,
+        "learning_rate": 0.001,
+        "n_iters": 200,
+        "repr_dims": 320,
+        "seed": 42
+      }
+    },
+    "MF-CLR": {
+      "Chinatown": {
+        "batch_size": 16,
+        "learning_rate": 0.0005,
+        "n_iters": 200,
+        "seed": 42
+      },
+      "AtrialFibrillation": {
+        "batch_size": 16,
+        "learning_rate": 0.0005,
+        "n_iters": 200,
+        "seed": 42
+      }
+    },
+    "ConvTran": {
+      "Chinatown": {
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "n_iters": 200,
+        "seed": 42
+      },
+      "AtrialFibrillation": {
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "n_iters": 200,
+        "seed": 42
+      }
+    },
+    "InceptionTime": {
+      "Chinatown": {
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "n_iters": 200,
+        "seed": 42
+      },
+      "AtrialFibrillation": {
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "n_iters": 200,
+        "seed": 42
+      }
+    },
+    "BIOT": {
+      "Chinatown": {
+        "batch_size": 8,
+        "learning_rate": 0.0001,
+        "n_iters": 100,
+        "seed": 42,
+        "d_model": 64,
+        "e_layers": 2,
+        "dropout": 0.1
+      },
+      "AtrialFibrillation": {
+        "batch_size": 8,
+        "learning_rate": 0.0001,
+        "n_iters": 100,
+        "seed": 42,
+        "d_model": 64,
+        "e_layers": 2,
+        "dropout": 0.1
+      }
+    },
+    "TimesNet": {
+      "Chinatown": {
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "n_iters": 100,
+        "seed": 42,
+        "d_model": 64,
+        "e_layers": 2,
+        "dropout": 0.1
+      },
+      "AtrialFibrillation": {
+        "batch_size": 16,
+        "learning_rate": 0.0001,
+        "n_iters": 100,
+        "seed": 42,
+        "d_model": 64,
+        "e_layers": 2,
+        "dropout": 0.1
+      }
+    },
+    "VQ_VAE": {
+      "Chinatown": {
+        "batch_size": 8,
+        "learning_rate": 0.0005,
+        "n_iters": 150,
+        "seed": 42,
+        "d_model": 64,
+        "dropout": 0.1
+      },
+      "AtrialFibrillation": {
+        "batch_size": 8,
+        "learning_rate": 0.0005,
+        "n_iters": 150,
+        "seed": 42,
+        "d_model": 64,
+        "dropout": 0.1
+      }
+    }
+  },
+  "metadata": {
+    "description": "TSlib unified model optimization configurations",
+    "fair_comparison": "All models use TS2vec baseline parameters",
+    "optimized": "Model-specific parameters for best performance",
+    "created": "2025-08-23"
+  }
+}

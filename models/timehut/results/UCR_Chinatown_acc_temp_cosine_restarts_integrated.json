@@ -1,0 +1,16 @@
+{
+  "scenario": "temp_cosine_restarts",
+  "amc_setting": null,
+  "temp_setting": {
+    "method": "cosine_with_restarts",
+    "min_tau": 0.1,
+    "max_tau": 0.75,
+    "t_max": 25.0,
+    "restart_period": 10.0,
+    "restart_mult": 1.6
+  },
+  "result": {
+    "acc": 0.9825072886297376,
+    "auprc": 0.9978774506277681
+  }
+}

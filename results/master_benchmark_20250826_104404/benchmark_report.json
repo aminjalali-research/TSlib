@@ -1,0 +1,41 @@
+{
+  "benchmark_info": {
+    "timestamp": "2025-08-26T10:46:50.248506",
+    "total_time_seconds": 165.9044086933136,
+    "total_time_formatted": "2.8 minutes",
+    "models_tested": [
+      "BIOT"
+    ],
+    "datasets_tested": [
+      "AtrialFibrillation"
+    ],
+    "configuration": {
+      "models": [
+        "BIOT"
+      ],
+      "datasets": [
+        "AtrialFibrillation"
+      ],
+      "use_original_iterations": true,
+      "epochs": null,
+      "batch_size": 8,
+      "enable_optimization": true,
+      "optimization_mode": "fair",
+      "timeout_minutes": 200,
+      "enable_gpu_monitoring": true,
+      "save_intermediate_results": false,
+      "fair_comparison_mode": true
+    }
+  },
+  "summary_statistics": {
+    "total_experiments": 0,
+    "successful_experiments": 0,
+    "success_rate": 0,
+    "average_accuracy": 0,
+    "best_accuracy": 0,
+    "worst_accuracy": 0
+  },
+  "model_performance": {},
+  "dataset_performance": {},
+  "detailed_results": []
+}

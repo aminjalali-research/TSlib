@@ -1,0 +1,11 @@
+{
+  "method": "linear_decay",
+  "best_params": {
+    "min_tau": 0.12238565554548035,
+    "max_tau": 0.8665581169109351,
+    "t_max": 27.97045281815346
+  },
+  "best_accuracy": 0.9825072886297376,
+  "optimization_steps": 10,
+  "optimization_time": 86.41527724266052
+}

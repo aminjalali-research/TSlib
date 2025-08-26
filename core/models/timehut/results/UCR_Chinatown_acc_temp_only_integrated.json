@@ -1,0 +1,17 @@
+{
+  "scenario": "temp_only",
+  "amc_setting": null,
+  "temp_setting": {
+    "min_tau": 0.05,
+    "max_tau": 0.76,
+    "t_max": 25.0
+  },
+  "result": {
+    "acc": 0.9795918367346939,
+    "auprc": 0.9979280507092718
+  },
+  "optimization_info": {
+    "skipped_search": true,
+    "search_steps": 0
+  }
+}

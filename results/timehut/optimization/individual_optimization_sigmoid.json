@@ -1,0 +1,12 @@
+{
+  "method": "sigmoid_decay",
+  "best_params": {
+    "min_tau": 0.07952008314342242,
+    "max_tau": 0.8359093601633845,
+    "t_max": 30.361319499757627,
+    "steepness": 2.186567887667109
+  },
+  "best_accuracy": 0.9854227405247813,
+  "optimization_steps": 10,
+  "optimization_time": 89.10837817192078
+}

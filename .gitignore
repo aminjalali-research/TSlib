@@ -6,6 +6,39 @@ __pycache__/
 # C extensions
 *.so
 
+# TSlib specific exclusions
+# ========================
+
+# Datasets - exclude due to size and licensing
+datasets/
+
+# Large data files
+*.npy
+*.pkl
+*.h5
+*.hdf5
+
+# Model checkpoints and weights (large files)
+*.pth
+*.ckpt
+*.pt
+*.safetensors
+
+# Non-working model directories (exclude models that don't produce results)
+models/ctrl/
+models/dynamic_badpair/
+models/lead/
+models/medformer/
+models/multiview_ts_ssl/
+models/nutime/
+models/relcon/
+models/slots/
+models/ssl_forecasting/
+models/ssl_timeseries/
+models/timedrl/
+models/ts_contrastive/
+models/ts_drc/
+
 # Distribution / packaging
 .Python
 build/

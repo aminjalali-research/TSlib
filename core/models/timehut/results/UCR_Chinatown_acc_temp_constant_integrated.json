@@ -1,0 +1,14 @@
+{
+  "scenario": "temp_constant",
+  "amc_setting": null,
+  "temp_setting": {
+    "method": "constant",
+    "min_tau": 0.15,
+    "max_tau": 0.75,
+    "t_max": 10.5
+  },
+  "result": {
+    "acc": 0.9766763848396501,
+    "auprc": 0.9975573489536526
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "method": "polynomial_decay",
+  "best_params": {
+    "min_tau": 0.1267227267504714,
+    "max_tau": 0.8569073423192293,
+    "t_max": 16.140337422911244,
+    "power": 2.9043698506036475
+  },
+  "best_accuracy": 0.9825072886297376,
+  "optimization_steps": 10,
+  "optimization_time": 85.09354305267334
+}

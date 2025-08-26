@@ -1,0 +1,7 @@
+{
+  "method": "warmup_cosine",
+  "best_params": null,
+  "best_accuracy": 0.0,
+  "optimization_steps": 10,
+  "optimization_time": 24.08485746383667
+}

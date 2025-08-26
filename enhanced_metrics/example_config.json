@@ -1,0 +1,13 @@
+{
+  "models": [
+    "TimesURL",
+    "BIOT", 
+    "CoST",
+    "TFC",
+    "Ti_MAE"
+  ],
+  "datasets": [
+    "Chinatown",
+    "AtrialFibrillation"
+  ]
+}

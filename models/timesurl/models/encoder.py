@@ -1,0 +1,121 @@
+import torch
+from torch import nn
+import torch.nn.functional as F
+import numpy as np
+from .dilated_conv import DilatedConvEncoder
+
+def generate_continuous_mask(B, T, n=5, l=0.1):
+    res = torch.full((B, T), True, dtype=torch.bool)
+    if isinstance(n, float):
+        n = int(n * T)
+    n = max(min(n, T // 2), 1)
+    
+    if isinstance(l, float):
+        l = int(l * T)
+    l = max(l, 1)
+    
+    for i in range(B):
+        for _ in range(n):
+            t = np.random.randint(T-l+1)
+            res[i, t:t+l] = False
+    return res
+
+def generate_binomial_mask(B, T, p=0.5):
+    return torch.from_numpy(np.random.binomial(1, p, size=(B, T))).to(torch.bool)
+
+class TSEncoder(nn.Module):
+    def __init__(self, input_dims, output_dims, hidden_dims=64, depth=10, mask_mode='binomial'):
+        super().__init__()
+        self.input_dims = input_dims
+        self.output_dims = output_dims
+        self.hidden_dims = hidden_dims
+        self.mask_mode = mask_mode
+        self.input_fc = nn.Linear(input_dims, hidden_dims)
+        self.feature_extractor = DilatedConvEncoder(
+            hidden_dims,
+            [hidden_dims] * depth + [output_dims],
+            kernel_size=3
+        )
+        self.repr_dropout = nn.Dropout(p=0.1)
+        
+        # Add reconstruction head to project back to input dimensions
+        self.reconstruction_head = nn.Linear(output_dims, input_dims)
+        
+    def forward(self, x, mask=None):  # x: B x T x input_dims or dict
+        # Handle dictionary input format used by TimesURL
+        if isinstance(x, dict):
+            data = x['data']  # Extract the actual tensor data
+            mask_from_dict = x.get('mask', None)
+            if mask is None:
+                mask = mask_from_dict
+        else:
+            data = x
+        
+        # Handle dimension mismatch for specific datasets first
+        if data.shape[-1] > self.input_dims:
+            print(f"TimesURL Encoder: Slicing input from {data.shape[-1]} to {self.input_dims} channels")
+            data = data[..., :self.input_dims]  # Keep only the first input_dims channels
+            # Also slice the mask if it exists and has the same dimension issue
+            if mask is not None and hasattr(mask, 'shape') and len(mask.shape) >= 3 and mask.shape[-1] > self.input_dims:
+                print(f"TimesURL Encoder: Also slicing mask from {mask.shape[-1]} to {self.input_dims} channels")
+                mask = mask[..., :self.input_dims]
+        
+        # Calculate nan_mask based on the input dimensions only
+        # For TimesURL with load_tp=True, the last dimension is time position, not a data channel
+        data_channels = data[..., :self.input_dims]  # Only consider actual data channels for nan_mask
+        nan_mask = ~data_channels.isnan().any(axis=-1)  # Shape: (B, T)
+        
+        # Set NaN values to 0 in the data
+        data[~nan_mask.unsqueeze(-1).expand_as(data)] = 0
+        data = self.input_fc(data)  # B x T x Ch
+        
+        # generate & apply mask
+        if mask is None:
+            if self.training:
+                mask = self.mask_mode
+            else:
+                mask = 'all_true'
+        
+        if mask == 'binomial':
+            mask = generate_binomial_mask(data.size(0), data.size(1)).to(data.device)
+        elif mask == 'continuous':
+            mask = generate_continuous_mask(data.size(0), data.size(1)).to(data.device)
+        elif mask == 'all_true':
+            mask = data.new_full((data.size(0), data.size(1)), True, dtype=torch.bool)
+        elif mask == 'all_false':
+            mask = data.new_full((data.size(0), data.size(1)), False, dtype=torch.bool)
+        elif mask == 'mask_last':
+            mask = data.new_full((data.size(0), data.size(1)), True, dtype=torch.bool)
+            mask[:, -1] = False
+        # Handle tensor mask from data loading (shape: B x T x C)
+        elif isinstance(mask, torch.Tensor) and len(mask.shape) == 3:
+            # Convert 3D mask to 2D by taking any channel being valid
+            mask = mask.any(axis=-1)  # Shape: (B, T)
+        elif isinstance(mask, torch.Tensor) and len(mask.shape) == 2:
+            # Mask is already in correct 2D format
+            pass
+        else:
+            # Default to all true if we don't recognize the format
+            mask = data.new_full((data.size(0), data.size(1)), True, dtype=torch.bool)
+        
+        # Ensure both masks have the same shape (B, T)
+        if mask.shape != nan_mask.shape:
+            print(f"WARNING: mask.shape {mask.shape} != nan_mask.shape {nan_mask.shape}")
+            # If they still don't match, create a new mask with correct shape
+            if len(mask.shape) > 2:
+                mask = mask.any(axis=-1)
+        
+        mask &= nan_mask
+        data[~mask.unsqueeze(-1).expand_as(data)] = 0
+        
+        # conv encoder
+        data = data.transpose(1, 2)  # B x Ch x T
+        repr_data = self.repr_dropout(self.feature_extractor(data))  # B x Co x T
+        repr_data = repr_data.transpose(1, 2)  # B x T x Co
+        
+        # Generate reconstruction (project back to input dimensions)
+        recon_data = self.reconstruction_head(repr_data)  # B x T x input_dims
+        
+        # TimesURL expects (representation, reconstruction) 
+        return repr_data, recon_data
+        

@@ -1,0 +1,15 @@
+{
+  "scenario": "temp_cyclic",
+  "amc_setting": null,
+  "temp_setting": {
+    "method": "cyclic",
+    "min_tau": 0.15,
+    "max_tau": 0.75,
+    "t_max": 10.5,
+    "cycle_length": 3.5
+  },
+  "result": {
+    "acc": 0.9854227405247813,
+    "auprc": 0.9977658096774562
+  }
+}

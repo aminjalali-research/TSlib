@@ -1,0 +1,17 @@
+{
+  "scenario": "temp_cosine",
+  "amc_setting": null,
+  "temp_setting": {
+    "method": "cosine_annealing",
+    "min_tau": 0.17022282779041786,
+    "max_tau": 0.6654119685462657,
+    "t_max": 31.663249016848557,
+    "phase": 0.0,
+    "frequency": 1.0,
+    "bias": 0.0
+  },
+  "result": {
+    "acc": 0.9795918367346939,
+    "auprc": 0.9977783199350347
+  }
+}

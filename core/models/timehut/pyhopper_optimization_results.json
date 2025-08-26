@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-08-13 21:46:57",
+  "total_optimization_time": 648.4301016330719,
+  "dataset": "Chinatown",
+  "results": [
+    {
+      "method": "multi_cycle_cosine",
+      "best_params": {
+        "min_tau": 0.1,
+        "max_tau": 0.75,
+        "t_max": 25.0,
+        "num_cycles": 5,
+        "decay_factor": 0.775
+      },
+      "best_accuracy": 0.9854,
+      "optimization_time": 186.5950345993042
+    },
+    {
+      "method": "cosine_annealing",
+      "best_params": {
+        "min_tau": 0.1,
+        "max_tau": 0.75,
+        "t_max": 25.0,
+        "phase": 3.1,
+        "frequency": 1.4,
+        "bias": 0.0
+      },
+      "best_accuracy": 0.9854,
+      "optimization_time": 173.76686906814575
+    },
+    {
+      "method": "adaptive_cosine_annealing",
+      "best_params": {
+        "min_tau": 0.1,
+        "max_tau": 0.75,
+        "t_max": 25.0,
+        "momentum": 0.9,
+        "adaptation_rate": 0.2
+      },
+      "best_accuracy": 0.9854,
+      "optimization_time": 136.92811274528503
+    },
+    {
+      "method": "cosine_with_restarts",
+      "best_params": {
+        "min_tau": 0.1,
+        "max_tau": 0.75,
+        "t_max": 25.0,
+        "restart_period": 10.0,
+        "restart_mult": 1.6
+      },
+      "best_accuracy": 0.9825,
+      "optimization_time": 151.13994717597961
+    }
+  ]
+}

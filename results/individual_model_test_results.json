@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-08-24 22:42:20",
+  "total_tests": 9,
+  "successful": 0,
+  "failed": 9,
+  "success_rate": "0.0%",
+  "detailed_results": {
+    "TS2vec_Chinatown": false,
+    "TimeHUT_Chinatown": false,
+    "TNC_Chinatown": false,
+    "SoftCLT_Chinatown": false,
+    "BIOT_AtrialFibrillation": false,
+    "VQ_MTM_AtrialFibrillation": false,
+    "ConvTran_Chinatown": false,
+    "TFC_Chinatown": false,
+    "TimesNet_AtrialFibrillation": false
+  }
+}
