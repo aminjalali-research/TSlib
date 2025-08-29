@@ -3,13 +3,13 @@
   "amc_setting": null,
   "temp_setting": {
     "method": "polynomial_decay",
-    "min_tau": 0.18226463837079898,
-    "max_tau": 0.7571411326446698,
-    "t_max": 21.29839911873567,
+    "min_tau": 0.15,
+    "max_tau": 0.95,
+    "t_max": 25.0,
     "power": 2.0
   },
   "result": {
-    "acc": 0.9795918367346939,
-    "auprc": 0.9978446359745963
+    "acc": 0.9825072886297376,
+    "auprc": 0.9977916732065881
   }
 }

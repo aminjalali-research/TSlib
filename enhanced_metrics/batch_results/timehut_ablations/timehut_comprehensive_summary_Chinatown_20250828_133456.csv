@@ -1,0 +1,12 @@
+Scenario,Description,Dataset,Accuracy,Runtime_Seconds,Batch_Size,Epochs,AMC_Instance,AMC_Temporal,AMC_Margin,Min_Tau,Max_Tau,Temp_Method,Status
+Baseline,Standard TS2vec without any enhancements,Chinatown,0.9825072886297376,9.000574350357056,8,200,0.0,0.0,0.5,0.4,0.4,fixed,success
+AMC_Instance,Angular Margin Contrastive for instance discrimination,Chinatown,0.9825072886297376,10.833142042160034,8,200,1.0,0.0,0.5,0.4,0.4,fixed,success
+AMC_Temporal,Angular Margin Contrastive for temporal relationships,Chinatown,0.9766763848396501,11.23274827003479,8,200,0.0,1.0,0.5,0.4,0.4,fixed,success
+Temperature_Linear,Linear temperature scheduling,Chinatown,0.9766763848396501,8.734500646591187,8,200,0.0,0.0,0.5,0.15,0.75,linear,success
+Temperature_Cosine,Cosine annealing temperature scheduling,Chinatown,0.9766763848396501,8.27305269241333,8,200,0.0,0.0,0.5,0.15,0.75,cosine_annealing,success
+Temperature_Exponential,Exponential decay temperature scheduling,Chinatown,0.9795918367346939,8.341910600662231,8,200,0.0,0.0,0.5,0.15,0.75,exponential_decay,success
+AMC_Both,Combined AMC instance and temporal losses,Chinatown,0.9825072886297376,12.615599632263184,8,200,0.7,0.5,0.5,0.4,0.4,fixed,success
+AMC_Temperature_Linear,AMC losses with linear temperature scheduling,Chinatown,0.9620991253644315,12.839351892471313,8,200,1.0,0.5,0.5,0.15,0.75,linear,success
+AMC_Temperature_Cosine,AMC losses with cosine annealing (recommended setup),Chinatown,0.9854227405247813,12.696383714675903,8,200,1.0,0.5,0.5,0.15,0.75,cosine_annealing,success
+AMC_Temperature_Exponential,AMC losses with exponential decay temperature,Chinatown,0.9854227405247813,12.786598920822144,8,200,1.0,0.5,0.5,0.15,0.75,exponential_decay,success
+Optimized_Configuration,Best configuration from hyperparameter optimization,Chinatown,0.9825072886297376,12.655109882354736,8,200,1.2,0.8,0.4,0.12,0.82,cosine_annealing,success

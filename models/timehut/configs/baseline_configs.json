@@ -1,0 +1,45 @@
+{
+  "baseline_experiments": {
+    "description": "Baseline TimeHUT experiments for comparison",
+    "datasets": ["Chinatown", "AtrialFibrillation", "SyntheticControl", "Coffee"],
+    "scenarios": {
+      "baseline": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false,
+        "epochs": 100,
+        "description": "Standard TS2Vec without enhancements"
+      },
+      "amc_temp": {
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "epochs": 100,
+        "description": "Default TimeHUT configuration"
+      }
+    },
+    "metrics": ["accuracy", "auprc", "training_time", "memory_usage", "convergence_epochs"],
+    "repeats": 3,
+    "statistical_testing": true
+  },
+  
+  "cross_model_comparison": {
+    "description": "TimeHUT vs other models",
+    "models": ["TimeHUT", "TS2Vec", "SoftCLT", "TimesURL"],
+    "datasets": ["Chinatown", "AtrialFibrillation", "SyntheticControl"],
+    "epochs": 200,
+    "timeout": 300,
+    "metrics": ["accuracy", "auprc", "f1_score", "training_time", "memory_peak", "gpu_utilization"],
+    "statistical_analysis": {
+      "significance_level": 0.05,
+      "correction_method": "bonferroni",
+      "effect_size": true,
+      "confidence_intervals": true
+    }
+  }
+}

@@ -129,7 +129,7 @@ class MasterBenchmarkPipeline:
                     return False
             
             # Check TS2vec reference implementation
-            ts2vec_path = "/home/amin/TSlib/models/timehut/baselines/TS2vec"
+            ts2vec_path = "/home/amin/TSlib/models/ts2vec"
             if not os.path.exists(os.path.join(ts2vec_path, "train.py")):
                 print(f"❌ TS2vec reference not found: {ts2vec_path}")
                 return False
@@ -1038,183 +1038,43 @@ class MasterBenchmarkPipeline:
             return None
     
     def _run_timehut_model(self, dataset: str, config: Dict[str, Any], experiment_id: str) -> Optional[ModelResults]:
-        """Run TimeHUT model using its native training script with AMC losses enabled"""
-        print(f"    🔧 Running TimeHUT model with AMC losses enabled")
+        """Run TimeHUT model using the unified comprehensive training script"""
+        print(f"    🔧 Running TimeHUT model with unified training script and batch size 8, epochs 200")
         
-        # TimeHUT uses its own train.py with pyhopper optimization
+        # TimeHUT uses its unified training script
         timehut_path = "/home/amin/TSlib/models/timehut"
         
         # Use similar parameters to TS2vec
         dataset_config = DATASET_CONFIGS.get(dataset, {})
-        loader = dataset_config.get('loader', 'UEA')
+        loader = dataset_config.get('loader', 'UCR')  # Default to UCR for Chinatown
         
-        # Create a custom TimeHUT training script that enables AMC losses
-        custom_script_content = f'''import torch
-import numpy as np
-import argparse
-import os
-import sys
-import time
-import datetime
-from ts2vec import TS2Vec
-import tasks
-import datautils
-from utils import init_dl_program
-from sklearn.model_selection import train_test_split
-import pyhopper
-import json
-
-labeled_ratio = 0.7
-
-def train_model_with_amc(config, temp_dictionary=None, amc_setting=None, type="full"):
-    """Train TimeHUT model with proper AMC loss configuration"""
-    
-    if type == 'full':
-        print("🔥 Training TimeHUT with AMC losses enabled")
-        print(f"   🎯 AMC Instance: {{amc_setting['amc_instance'] if amc_setting else 0}}")
-        print(f"   🎯 AMC Temporal: {{amc_setting['amc_temporal'] if amc_setting else 0}}")
-        print(f"   🎯 AMC Margin: {{amc_setting['amc_margin'] if amc_setting else 0.5}}")
-        
-        t = time.time()
-        model = TS2Vec(
-            input_dims=train_data.shape[-1],
-            device=device,
-            temp_dictionary=temp_dictionary,
-            amc_setting=amc_setting,  # ⚡ CRITICAL: Pass AMC settings
-            **config
-        )
-        
-        loss_log = model.fit(
-            train_data,
-            n_epochs=args.epochs,
-            n_iters=args.iters,
-            verbose=False
-        )
-
-        out, eval_res = tasks.eval_classification(model, train_data, train_labels, test_data, test_labels, eval_protocol='svm')
-        print('Evaluation result on test (full train):', eval_res)
-        return eval_res
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('dataset', help='The dataset name')
-    parser.add_argument('run_name', help='The folder name used to save model, output and evaluation metrics')
-    parser.add_argument('--loader', type=str, required=True, help='The data loader (UCR or UEA)')
-    parser.add_argument('--gpu', type=int, default=0, help='The gpu no. used for training')
-    parser.add_argument('--batch-size', type=int, default=8, help='The batch size')
-    parser.add_argument('--lr', type=float, default=0.001, help='The learning rate')
-    parser.add_argument('--repr-dims', type=int, default=320, help='The representation dimension')
-    parser.add_argument('--max-train-length', type=int, default=3000, help='Max train length')
-    parser.add_argument('--iters', type=int, default=None, help='The number of iterations')
-    parser.add_argument('--epochs', type=int, default=None, help='The number of epochs')
-    parser.add_argument('--seed', type=int, default=None, help='The random seed')
-    parser.add_argument('--max-threads', type=int, default=None, help='The maximum threads')
-    parser.add_argument('--eval', action="store_true", help='Whether to perform evaluation')
-    parser.add_argument('--dataroot', type=str, default='/home/amin/TSlib/datasets', help='Root for dataset')
-    
-    # ⚡ CRITICAL AMC Parameters
-    parser.add_argument('--amc-instance', type=float, default={config.amc_instance}, help='AMC instance coefficient')
-    parser.add_argument('--amc-temporal', type=float, default={config.amc_temporal}, help='AMC temporal coefficient')  
-    parser.add_argument('--amc-margin', type=float, default={config.amc_margin}, help='AMC margin')
-    
-    # Temperature scheduling parameters
-    parser.add_argument('--min-tau', type=float, default={config.min_tau}, help='Min temperature')
-    parser.add_argument('--max-tau', type=float, default={config.max_tau}, help='Max temperature')
-    parser.add_argument('--t-max', type=float, default={config.t_max}, help='Temperature period')
-    
-    args = parser.parse_args()
-    
-    print("🔥 TimeHUT with AMC Losses Configuration:")
-    print(f"   Dataset: {{args.dataset}}")
-    print(f"   AMC Instance: {{args.amc_instance}}")  
-    print(f"   AMC Temporal: {{args.amc_temporal}}")
-    print(f"   AMC Margin: {{args.amc_margin}}")
-    print(f"   Temperature range: {{args.min_tau}} - {{args.max_tau}}")
-    
-    device = init_dl_program(args.gpu, seed=args.seed, max_threads=args.max_threads)
-    
-    print('Loading data... ', end='')
-    if args.loader == 'UCR':
-        train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, root=args.dataroot)
-    elif args.loader == 'UEA':
-        train_data, train_labels, test_data, test_labels = datautils.load_UEA(args.dataset, root=args.dataroot)
-    print('done')
-    
-    config = dict(
-        batch_size=args.batch_size,
-        lr=args.lr,
-        output_dims=args.repr_dims,
-        max_train_length=args.max_train_length
-    )
-    
-    # ⚡ CRITICAL: Configure AMC settings with NON-ZERO values
-    amc_setting = {{
-        'amc_instance': args.amc_instance,  # Must be > 0 for Angular Margin Contrastive loss
-        'amc_temporal': args.amc_temporal,  # Must be > 0 for temporal AMC loss
-        'amc_margin': args.amc_margin       # Angular margin value
-    }}
-    
-    # Configure temperature settings  
-    temp_settings = {{
-        'min_tau': args.min_tau,
-        'max_tau': args.max_tau,
-        't_max': args.t_max,
-        'method': 'cosine_annealing'
-    }}
-    
-    print(f"✅ AMC Settings: {{amc_setting}}")
-    print(f"✅ Temperature Settings: {{temp_settings}}")
-    
-    # Train with AMC losses enabled
-    final_res = train_model_with_amc(config, temp_dictionary=temp_settings, amc_setting=amc_setting, type="full")
-    
-    print("✅ TimeHUT with AMC losses completed successfully!")
-'''
-        
-        # Write the custom script
-        custom_script_path = os.path.join(timehut_path, 'train_with_amc.py')
-        with open(custom_script_path, 'w') as f:
-            f.write(custom_script_content)
-        
+        # Build command using the unified comprehensive training script
+        run_name = experiment_id
         args = [
-            'python', 'train_with_amc.py',
+            '/home/amin/anaconda3/envs/tslib/bin/python',
+            'train_unified_comprehensive.py',
             dataset,
-            experiment_id,
+            run_name,
             '--loader', loader,
-            '--batch-size', str(config.batch_size),
-            '--lr', str(config.learning_rate),
-            '--repr-dims', str(config.repr_dims),
-            '--seed', str(config.seed),
-            '--gpu', str(config.gpu),
-            '--eval',
-            '--dataroot', '/home/amin/TSlib/datasets',
-            # ⚡ CRITICAL: Pass AMC parameters (NON-ZERO values)
-            '--amc-instance', str(config.amc_instance),
-            '--amc-temporal', str(config.amc_temporal), 
-            '--amc-margin', str(config.amc_margin),
-            # Temperature parameters
-            '--min-tau', str(config.min_tau),
-            '--max-tau', str(config.max_tau),
-            '--t-max', str(config.t_max)
+            '--scenario', 'amc_temp',  # Use AMC + temperature scenario
+            '--epochs', '200',  # Force 200 epochs as requested
+            '--batch-size', '8',  # Force batch size 8 as requested
+            '--amc-instance', '1.0',
+            '--amc-temporal', '0.5',
+            '--amc-margin', '0.5',
+            '--min-tau', '0.15',
+            '--max-tau', '0.75',
+            '--t-max', '10.5',
+            '--temp-method', 'cosine_annealing'
         ]
         
-        if hasattr(config, 'n_iters') and config.n_iters:
-            args.extend(['--iters', str(config.n_iters)])
-        
-        print(f"    💻 Command: {' '.join(args)}")
-        print(f"    🎯 Using TimeHUT path: {timehut_path}")
-        print(f"    🔥 AMC Instance: {config.amc_instance}, AMC Temporal: {config.amc_temporal}")
+        print(f"    💻 Command: {' '.join(args[1:])}")  # Don't show full python path
+        print(f"    🎯 Using TimeHUT unified script with AMC+Temperature scenario")
+        print(f"    📊 Configuration: epochs=200, batch_size=8, scenario=amc_temp")
         
         try:
-            # Use conda run for proper environment activation
-            full_command = [
-                'conda', 'run', '-n', 'tslib',
-                '--no-capture-output',
-                'env', 'MKL_THREADING_LAYER=GNU'
-            ] + args
-            
             result = subprocess.run(
-                full_command,
+                args,
                 cwd=timehut_path,
                 capture_output=True,
                 text=True,
@@ -1227,7 +1087,7 @@ if __name__ == '__main__':
             else:
                 print(f"    ❌ TimeHUT failed with return code: {result.returncode}")
                 if result.stderr:
-                    print(f"    📋 Error: {result.stderr[-300:]}")
+                    print(f"    📋 STDERR: {result.stderr[-500:]}")
                 return None
                 
         except subprocess.TimeoutExpired:

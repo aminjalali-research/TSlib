@@ -25,7 +25,7 @@ import argparse
 import csv
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List, Tuple, Optional
 import subprocess
 
 # Import the single model runner
@@ -40,6 +40,10 @@ class EnhancedBatchRunner:
         self.results_dir = Path('/home/amin/TSlib/enhanced_metrics/batch_results')
         self.results_dir.mkdir(parents=True, exist_ok=True)
         
+        # TimeHUT specialized results
+        self.timehut_results_dir = self.results_dir / 'timehut_ablations'
+        self.timehut_results_dir.mkdir(parents=True, exist_ok=True)
+        
         self.summary_results = []
         self.failed_runs = []
         self.successful_runs = []
@@ -48,6 +52,146 @@ class EnhancedBatchRunner:
         self.start_time = None
         self.total_runs = 0
         self.completed_runs = 0
+        
+        # TimeHUT Comprehensive Scenarios
+        self.timehut_scenarios = self._define_timehut_scenarios()
+        
+    def _define_timehut_scenarios(self) -> List[Dict[str, Any]]:
+        """Define all 11 TimeHUT scenarios for comprehensive ablation study"""
+        return [
+            # 1. Baseline - No enhancements
+            {
+                "name": "Baseline",
+                "description": "Standard TS2vec without any enhancements",
+                "amc_instance": 0.0,
+                "amc_temporal": 0.0,
+                "amc_margin": 0.5,
+                "min_tau": 0.4,
+                "max_tau": 0.4,
+                "temp_method": "fixed"
+            },
+            
+            # 2. AMC Instance Only
+            {
+                "name": "AMC_Instance",  
+                "description": "Angular Margin Contrastive for instance discrimination",
+                "amc_instance": 1.0,
+                "amc_temporal": 0.0,
+                "amc_margin": 0.5,
+                "min_tau": 0.4,
+                "max_tau": 0.4,
+                "temp_method": "fixed"
+            },
+            
+            # 3. AMC Temporal Only
+            {
+                "name": "AMC_Temporal",
+                "description": "Angular Margin Contrastive for temporal relationships", 
+                "amc_instance": 0.0,
+                "amc_temporal": 1.0,
+                "amc_margin": 0.5,
+                "min_tau": 0.4,
+                "max_tau": 0.4,
+                "temp_method": "fixed"
+            },
+            
+            # 4. Temperature Scheduling - Cosine (TimeHUT only supports cosine annealing)
+            {
+                "name": "Temperature_Scheduling",
+                "description": "Cosine annealing temperature scheduling (0.15-0.75)",
+                "amc_instance": 0.0,
+                "amc_temporal": 0.0,
+                "amc_margin": 0.5,
+                "min_tau": 0.15,
+                "max_tau": 0.75,
+                "temp_method": "cosine_annealing"
+            },
+            
+            # 5. AMC Both (Instance + Temporal)
+            {
+                "name": "AMC_Both",
+                "description": "Combined AMC instance and temporal losses",
+                "amc_instance": 0.7,
+                "amc_temporal": 0.5,
+                "amc_margin": 0.5,
+                "min_tau": 0.4,
+                "max_tau": 0.4,
+                "temp_method": "fixed"
+            },
+            
+            # 6. AMC + Temperature Scheduling
+            {
+                "name": "AMC_Temperature_Scheduling",
+                "description": "AMC losses with temperature scheduling (0.15-0.75)",
+                "amc_instance": 1.0,
+                "amc_temporal": 0.5,
+                "amc_margin": 0.5,
+                "min_tau": 0.15,
+                "max_tau": 0.75,
+                "temp_method": "cosine_annealing"
+            },
+            
+            # 7. High AMC Instance
+            {
+                "name": "High_AMC_Instance",
+                "description": "High AMC instance coefficient (2.0)",
+                "amc_instance": 2.0,
+                "amc_temporal": 0.5,
+                "amc_margin": 0.4,
+                "min_tau": 0.15,
+                "max_tau": 0.75,
+                "temp_method": "cosine_annealing"
+            },
+            
+            # 8. High AMC Temporal
+            {
+                "name": "High_AMC_Temporal", 
+                "description": "High AMC temporal coefficient (2.0)",
+                "amc_instance": 1.0,
+                "amc_temporal": 2.0,
+                "amc_margin": 0.4,
+                "min_tau": 0.15,
+                "max_tau": 0.75,
+                "temp_method": "cosine_annealing"
+            },
+            
+            # 9. Tight Temperature Range
+            {
+                "name": "Tight_Temperature",
+                "description": "Tight temperature range (0.1-0.5) with AMC",
+                "amc_instance": 1.0,
+                "amc_temporal": 0.5,
+                "amc_margin": 0.5,
+                "min_tau": 0.1,
+                "max_tau": 0.5,
+                "temp_method": "cosine_annealing"
+            },
+            
+            # 10. Wide Temperature Range
+            {
+                "name": "Wide_Temperature",
+                "description": "Wide temperature range (0.05-0.9) with AMC",
+                "amc_instance": 1.0,
+                "amc_temporal": 0.5,
+                "amc_margin": 0.5,
+                "min_tau": 0.05,
+                "max_tau": 0.9,
+                "temp_method": "cosine_annealing"
+            },
+            
+            # 11. Optimized Efficient (Best Known Configuration)
+            {
+                "name": "Optimized_Efficient", 
+                "description": "High-performance configuration (AMC 10.0/7.53, temp 0.05-0.76)",
+                "amc_instance": 10.0,
+                "amc_temporal": 7.53,
+                "amc_margin": 0.3,
+                "min_tau": 0.05,
+                "max_tau": 0.76,
+                "t_max": 25.0,
+                "temp_method": "cosine_annealing"  # TimeHUT only supports cosine
+            }
+        ]
         
     def run_batch_experiments(self, model_dataset_pairs: List[Tuple[str, str]], timeout: int = 120) -> Dict[str, Any]:
         """Run batch experiments with enhanced metrics collection"""
@@ -492,6 +636,392 @@ class EnhancedBatchRunner:
         
         print(f"✅ Enhanced batch metrics collection completed!")
         print(f"{'='*80}")
+    
+    def run_timehut_comprehensive_ablation(self, dataset: str = "Chinatown", timeout: int = 900) -> None:
+        """Run comprehensive TimeHUT ablation study with all 11 scenarios"""
+        
+        print(f"\n🚀 TIMEHUT COMPREHENSIVE ABLATION STUDY")
+        print(f"{'='*80}")
+        print(f"📊 Dataset: {dataset}")
+        print(f"📈 Configuration: batch_size=8, epochs=200")
+        print(f"🧪 Total Scenarios: {len(self.timehut_scenarios)}")
+        print(f"⏱️ Estimated Time: {len(self.timehut_scenarios) * 5} minutes")
+        print(f"{'='*80}")
+        
+        timehut_results = []
+        
+        for i, scenario in enumerate(self.timehut_scenarios, 1):
+            print(f"\n📋 TIMEHUT SCENARIO {i}/{len(self.timehut_scenarios)}")
+            
+            result = self._run_single_timehut_scenario(scenario, dataset, timeout)
+            
+            if result:
+                timehut_results.append(result)
+                print(f"✅ Scenario '{scenario['name']}' completed: {result['accuracy']:.4f}")
+            else:
+                self.failed_runs.append(f"TimeHUT_{scenario['name']}")
+                print(f"❌ Scenario '{scenario['name']}' failed")
+                
+            print("-" * 80)
+        
+        # Save TimeHUT ablation results
+        self._save_timehut_ablation_results(timehut_results, dataset)
+        
+        # Print TimeHUT summary
+        self._print_timehut_ablation_summary(timehut_results)
+    
+    def _run_single_timehut_scenario(self, scenario: Dict[str, Any], dataset: str, timeout: int) -> Optional[Dict[str, Any]]:
+        """Run a single TimeHUT scenario with enhanced metrics collection"""
+        
+        print(f"🚀 TIMEHUT SCENARIO: {scenario['name']}")
+        print(f"📊 Description: {scenario['description']}")
+        print(f"🎯 AMC Instance: {scenario['amc_instance']}, AMC Temporal: {scenario['amc_temporal']}")
+        print(f"🌡️ Temperature: {scenario['min_tau']} - {scenario['max_tau']} ({scenario['temp_method']})")
+        print(f"📈 Configuration: batch_size=8, epochs=200")
+        
+        # Special handling for Optimized_Efficient - use efficiency optimizer
+        if scenario['name'] == 'Optimized_Efficient':
+            return self._run_efficiency_optimized_scenario(scenario, dataset, timeout)
+        
+        # Build command using TimeHUT's unified comprehensive script
+        run_name = f"{scenario['name']}_{dataset}_batch8_epochs200"
+        timehut_path = "/home/amin/TSlib/models/timehut"
+        
+        args = [
+            '/home/amin/anaconda3/envs/tslib/bin/python',
+            'train_unified_comprehensive.py',
+            dataset,
+            run_name,
+            '--loader', 'UCR',
+            '--epochs', '200',  # Force 200 epochs
+            '--batch-size', '8',  # Force batch size 8  
+            '--eval',
+            '--dataroot', '/home/amin/TSlib/datasets',
+            # AMC Parameters
+            '--amc-instance', str(scenario['amc_instance']),
+            '--amc-temporal', str(scenario['amc_temporal']),
+            '--amc-margin', str(scenario['amc_margin']),
+            # Temperature Parameters (only supported args)
+            '--min-tau', str(scenario['min_tau']),
+            '--max-tau', str(scenario['max_tau']),
+            '--t-max', str(scenario.get('t_max', 10.5))  # Use scenario-specific t_max
+        ]
+        
+        print(f"💻 Command: {' '.join(args[1:])}")
+        print(f"🎯 Using TimeHUT parameters: t_max={scenario.get('t_max', 10.5)}")
+        print(f"📊 Note: TimeHUT uses hardcoded cosine_annealing temperature scheduling")
+        
+        start_time = time.time()
+        
+        try:
+            result = subprocess.run(
+                args,
+                cwd=timehut_path,
+                capture_output=True,
+                text=True,
+                timeout=timeout
+            )
+            
+            end_time = time.time()
+            runtime = end_time - start_time
+            
+            if result.returncode == 0:
+                # Parse results
+                accuracy = self._extract_timehut_accuracy(result.stdout)
+                
+                return {
+                    'scenario': scenario['name'],
+                    'description': scenario['description'],
+                    'dataset': dataset,
+                    'accuracy': accuracy,
+                    'runtime_seconds': runtime,
+                    'batch_size': 8,
+                    'epochs': 200,
+                    'status': 'success',
+                    'amc_instance': scenario['amc_instance'],
+                    'amc_temporal': scenario['amc_temporal'],
+                    'amc_margin': scenario['amc_margin'],
+                    'min_tau': scenario['min_tau'],
+                    'max_tau': scenario['max_tau'],
+                    'temp_method': scenario['temp_method'],
+                    'timestamp': datetime.utcnow().isoformat()
+                }
+            else:
+                print(f"❌ Failed with return code: {result.returncode}")
+                if result.stderr:
+                    print(f"📋 STDERR: {result.stderr[-300:]}")
+                return None
+                
+        except subprocess.TimeoutExpired:
+            print(f"⏰ Timed out after {timeout}s")
+            return None
+        except Exception as e:
+            print(f"❌ Execution error: {str(e)}")
+            return None
+    
+    def _extract_timehut_accuracy(self, stdout: str) -> float:
+        """Extract accuracy from TimeHUT output"""
+        lines = stdout.split('\n')
+        for line in lines:
+            if 'Evaluation result on test' in line and 'acc' in line:
+                # Look for patterns like "acc': 0.9854" or "accuracy: 0.9854"
+                import re
+                acc_match = re.search(r"'acc[uracy]*'?:?\s*([\d\.]+)", line)
+                if acc_match:
+                    return float(acc_match.group(1))
+            elif 'Final Results:' in line:
+                # Look for final results pattern 
+                import re
+                acc_match = re.search(r"'acc':\s*([\d\.]+)", line)
+                if acc_match:
+                    return float(acc_match.group(1))
+        return 0.0
+    
+    def _run_efficiency_optimized_scenario(self, scenario: Dict[str, Any], dataset: str, timeout: int) -> Optional[Dict[str, Any]]:
+        """Run the Optimized_Efficient scenario using the efficiency optimizer"""
+        
+        print(f"⚡ EFFICIENCY OPTIMIZATION MODE")
+        print(f"🎯 Using timehut_efficiency_optimizer.py for computational efficiency")
+        print(f"📊 Target: Reduce training time by 30-50% while maintaining 98%+ accuracy")
+        
+        timehut_path = "/home/amin/TSlib/models/timehut"
+        
+        # Use the efficiency optimizer with full optimization pipeline
+        args = [
+            '/home/amin/anaconda3/envs/tslib/bin/python',
+            'timehut_efficiency_optimizer.py',
+            '--full-optimization',
+            '--dataset', dataset,
+            '--epochs', '200'  # Still target 200 epochs baseline for comparison
+        ]
+        
+        print(f"💻 Efficiency Command: {' '.join(args[1:])}")
+        print(f"🚀 Running comprehensive efficiency optimization pipeline...")
+        
+        start_time = time.time()
+        
+        try:
+            result = subprocess.run(
+                args,
+                cwd=timehut_path,
+                capture_output=True,
+                text=True,
+                timeout=timeout * 2  # Give more time for the optimization process
+            )
+            
+            end_time = time.time()
+            runtime = end_time - start_time
+            
+            if result.returncode == 0:
+                # Parse the efficiency optimizer output
+                metrics = self._parse_efficiency_optimizer_output(result.stdout, result.stderr)
+                
+                return {
+                    'scenario': 'Optimized_Efficient',
+                    'description': scenario['description'],
+                    'dataset': dataset,
+                    'accuracy': metrics.get('accuracy', 0.0),
+                    'runtime_seconds': runtime,
+                    'batch_size': 8,  # Add batch_size for consistency
+                    'epochs': 200,    # Add epochs for consistency
+                    'efficiency_mode': True,
+                    'time_reduction_percent': metrics.get('time_reduction_percent', 0.0),
+                    'memory_reduction_percent': metrics.get('memory_reduction_percent', 0.0),
+                    'optimizations_applied': metrics.get('optimizations_applied', []),
+                    'status': 'success',
+                    'amc_instance': scenario['amc_instance'],
+                    'amc_temporal': scenario['amc_temporal'],
+                    'amc_margin': scenario['amc_margin'],
+                    'min_tau': scenario['min_tau'],
+                    'max_tau': scenario['max_tau'],
+                    't_max': scenario.get('t_max', 25.0),
+                    'temp_method': scenario['temp_method'],
+                    'optimization_type': 'computational_efficiency',
+                    'timestamp': datetime.utcnow().isoformat()
+                }
+            else:
+                print(f"❌ Efficiency optimizer failed with return code: {result.returncode}")
+                if result.stderr:
+                    print(f"📋 STDERR: {result.stderr[-500:]}")
+                return None
+                
+        except subprocess.TimeoutExpired:
+            print(f"⏰ Efficiency optimization timed out (extended timeout: {timeout * 2}s)")
+            return None
+        except Exception as e:
+            print(f"❌ Error running efficiency optimization: {str(e)}")
+            return None
+    
+    def _parse_efficiency_optimizer_output(self, stdout: str, stderr: str) -> Dict[str, Any]:
+        """Parse output from timehut_efficiency_optimizer.py"""
+        
+        metrics = {
+            'accuracy': 0.0,
+            'fscore': 0.0,
+            'time_reduction_percent': 0.0,
+            'memory_reduction_percent': 0.0,
+            'optimizations_applied': []
+        }
+        
+        # Parse final accuracy
+        for line in stdout.split('\n'):
+            if 'Final Accuracy:' in line:
+                try:
+                    acc_str = line.split('Final Accuracy:')[1].strip()
+                    metrics['accuracy'] = float(acc_str)
+                except (ValueError, IndexError):
+                    continue
+            
+            # Parse time reduction
+            elif 'Time reduction:' in line and '%' in line:
+                try:
+                    time_red = line.split('Time reduction:')[1].split('%')[0].strip()
+                    metrics['time_reduction_percent'] = float(time_red)
+                except (ValueError, IndexError):
+                    continue
+            
+            # Parse memory efficiency
+            elif 'Memory efficiency:' in line and '%' in line:
+                try:
+                    mem_red = line.split('Memory efficiency:')[1].split('%')[0].strip()
+                    metrics['memory_reduction_percent'] = float(mem_red)
+                except (ValueError, IndexError):
+                    continue
+            
+            # Parse combined optimization accuracy
+            elif 'Combined optimizations:' in line and 'accuracy' in line:
+                try:
+                    # Extract accuracy from: "Combined optimizations: 0.9854 accuracy"
+                    parts = line.split('Combined optimizations:')[1].strip()
+                    acc_part = parts.split('accuracy')[0].strip()
+                    metrics['accuracy'] = float(acc_part)
+                except (ValueError, IndexError):
+                    continue
+        
+        # Fallback accuracy parsing
+        if metrics['accuracy'] == 0.0:
+            for line in reversed(stdout.split('\n')):
+                if 'accuracy' in line.lower() and any(char.isdigit() for char in line):
+                    # Look for patterns like "0.9854 accuracy" or "accuracy: 0.9854"
+                    import re
+                    acc_match = re.search(r'(\d+\.\d+).*?accuracy|accuracy.*?(\d+\.\d+)', line, re.IGNORECASE)
+                    if acc_match:
+                        acc_val = acc_match.group(1) or acc_match.group(2)
+                        if acc_val:
+                            try:
+                                metrics['accuracy'] = float(acc_val)
+                                break
+                            except ValueError:
+                                continue
+        
+        # Look for optimization techniques applied
+        optimizations_found = []
+        for line in stdout.split('\n'):
+            if 'Applied optimizations:' in line:
+                opt_list = line.split('Applied optimizations:')[1].strip()
+                optimizations_found = [opt.strip() for opt in opt_list.split(',')]
+                break
+        
+        metrics['optimizations_applied'] = optimizations_found
+        
+        return metrics
+
+    def _save_timehut_ablation_results(self, results: List[Dict], dataset: str) -> None:
+        """Save comprehensive TimeHUT ablation results"""
+        
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        
+        # JSON detailed results
+        json_file = self.timehut_results_dir / f"timehut_comprehensive_ablation_{dataset}_{timestamp}.json"
+        with open(json_file, 'w') as f:
+            json.dump({
+                'metadata': {
+                    'dataset': dataset,
+                    'batch_size': 8,
+                    'epochs': 200,
+                    'total_scenarios': len(self.timehut_scenarios),
+                    'successful_scenarios': len(results),
+                    'timestamp': timestamp
+                },
+                'results': results
+            }, f, indent=2)
+        
+        # CSV summary (compatible with your Excel format)
+        csv_file = self.timehut_results_dir / f"timehut_comprehensive_summary_{dataset}_{timestamp}.csv"
+        with open(csv_file, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=[
+                'Scenario', 'Description', 'Dataset', 'Accuracy', 'Runtime_Seconds',
+                'Batch_Size', 'Epochs', 'AMC_Instance', 'AMC_Temporal', 'AMC_Margin',
+                'Min_Tau', 'Max_Tau', 'Temp_Method', 'Status'
+            ])
+            writer.writeheader()
+            
+            for result in results:
+                writer.writerow({
+                    'Scenario': result['scenario'],
+                    'Description': result['description'],
+                    'Dataset': result['dataset'],
+                    'Accuracy': result['accuracy'],
+                    'Runtime_Seconds': result['runtime_seconds'],
+                    'Batch_Size': result.get('batch_size', 8), 
+                    'Epochs': result.get('epochs', 200),
+                    'AMC_Instance': result['amc_instance'],
+                    'AMC_Temporal': result['amc_temporal'],
+                    'AMC_Margin': result['amc_margin'],
+                    'Min_Tau': result['min_tau'],
+                    'Max_Tau': result['max_tau'],
+                    'Temp_Method': result['temp_method'],
+                    'Status': result['status']
+                })
+        
+        print(f"📁 TimeHUT ablation results saved:")
+        print(f"   📊 Detailed JSON: {json_file}")
+        print(f"   📋 CSV Summary: {csv_file}")
+    
+    def _print_timehut_ablation_summary(self, results: List[Dict]) -> None:
+        """Print comprehensive TimeHUT ablation summary"""
+        
+        print(f"\n🏆 TIMEHUT COMPREHENSIVE ABLATION SUMMARY")
+        print(f"{'='*80}")
+        
+        if not results:
+            print("❌ No successful TimeHUT results to summarize")
+            return
+            
+        # Find best performing scenarios
+        sorted_results = sorted(results, key=lambda x: x['accuracy'], reverse=True)
+        
+        print(f"📊 Total Scenarios Tested: {len(results)}")
+        print(f"✅ Successful Runs: {len(results)}")
+        print(f"❌ Failed Runs: {len(self.timehut_scenarios) - len(results)}")
+        
+        print(f"\n🏆 TOP 5 PERFORMING SCENARIOS:")
+        for i, result in enumerate(sorted_results[:5], 1):
+            print(f"   {i}. {result['scenario']}: {result['accuracy']:.4f} ({result['runtime_seconds']:.1f}s)")
+        
+        print(f"\n📈 ABLATION INSIGHTS:")
+        
+        # AMC Analysis
+        amc_only = [r for r in results if r['amc_instance'] > 0 or r['amc_temporal'] > 0]
+        baseline = [r for r in results if r['scenario'] == 'Baseline']
+        if amc_only and baseline:
+            avg_amc = sum(r['accuracy'] for r in amc_only) / len(amc_only)
+            baseline_acc = baseline[0]['accuracy']
+            print(f"   🎯 AMC Impact: +{avg_amc - baseline_acc:.4f} accuracy improvement")
+        
+        # Temperature Analysis
+        temp_scenarios = [r for r in results if r['temp_method'] != 'fixed']
+        if temp_scenarios:
+            best_temp = max(temp_scenarios, key=lambda x: x['accuracy'])
+            print(f"   🌡️ Best Temperature Method: {best_temp['temp_method']} ({best_temp['accuracy']:.4f})")
+        
+        # Combined Analysis  
+        combined = [r for r in results if r['amc_instance'] > 0 and r['temp_method'] != 'fixed']
+        if combined:
+            best_combined = max(combined, key=lambda x: x['accuracy'])
+            print(f"   🔥 Best Combined: {best_combined['scenario']} ({best_combined['accuracy']:.4f})")
+        
+        print(f"{'='*80}")
 
 
 def parse_config_file(config_path: str) -> List[Tuple[str, str]]:
@@ -526,10 +1056,23 @@ def main():
     parser.add_argument('--models', type=str, help='Comma-separated list of models')
     parser.add_argument('--datasets', type=str, help='Comma-separated list of datasets')
     parser.add_argument('--timeout', type=int, default=120, help='Timeout per model in seconds')
+    parser.add_argument('--timehut-ablation', action='store_true', help='Run comprehensive TimeHUT ablation study')
+    parser.add_argument('--timehut-dataset', type=str, default='Chinatown', help='Dataset for TimeHUT ablation study')
     
     args = parser.parse_args()
     
-    # Parse model-dataset combinations
+    # Handle TimeHUT ablation study
+    if args.timehut_ablation:
+        print(f"🚀 Running TimeHUT Comprehensive Ablation Study")
+        print(f"Dataset: {args.timehut_dataset}")
+        print(f"Timeout per scenario: {args.timeout}s")
+        
+        runner = EnhancedBatchRunner()
+        runner.run_timehut_comprehensive_ablation(args.timehut_dataset, args.timeout)
+        print("🎉 TimeHUT comprehensive ablation study completed!")
+        return
+    
+    # Parse model-dataset combinations for regular batch runs
     pairs = []
     
     if args.config:
@@ -544,6 +1087,7 @@ def main():
         print("Usage:")
         print("  python enhanced_metrics/enhanced_batch_runner.py --config config.json [--timeout 120]")
         print("  python enhanced_metrics/enhanced_batch_runner.py --models TimesURL,BIOT --datasets Chinatown,AtrialFibrillation [--timeout 120]")
+        print("  python enhanced_metrics/enhanced_batch_runner.py --timehut-ablation [--timehut-dataset Chinatown] [--timeout 900]")
         print()
         print("Config file format (JSON):")
         print('  {')
@@ -556,6 +1100,12 @@ def main():
         print("  🔥 Peak GPU Memory - Maximum GPU memory usage")
         print("  ⚡ FLOPs/Epoch - Computational complexity per epoch")
         print("  🚀 Comprehensive Efficiency Analysis")
+        print()
+        print("🧪 TimeHUT Ablation Study:")
+        print("  🎯 11 comprehensive scenarios (Baseline, AMC, Temperature, Combined)")
+        print("  📊 Batch size 8, epochs 200 for all scenarios")
+        print("  🌡️ Multiple temperature schedulers comparison")
+        print("  ⚡ AMC losses ablation analysis")
         return
     
     if not pairs:

@@ -1,0 +1,53 @@
+{
+  "acc": 0.9825072886297376,
+  "auprc": 0.998405522858848,
+  "training_time": 2.5929489135742188,
+  "final_loss": 4.989988517761231,
+  "amc_setting": {
+    "amc_instance": 1.0,
+    "amc_temporal": 0.5,
+    "amc_margin": 0.5
+  },
+  "temp_setting": {
+    "min_tau": 0.15,
+    "max_tau": 0.75,
+    "t_max": 10.5,
+    "method": "cosine_annealing"
+  },
+  "config": {
+    "batch_size": 8,
+    "lr": 0.001,
+    "repr_dims": 320,
+    "hidden_dims": 64,
+    "depth": 10,
+    "max_train_length": 3000,
+    "epochs": 10,
+    "iters": null,
+    "seed": null,
+    "gpu": 0,
+    "max_threads": null,
+    "amc_instance": 1.0,
+    "amc_temporal": 0.5,
+    "amc_margin": 0.5,
+    "min_tau": 0.15,
+    "max_tau": 0.75,
+    "t_max": 10.5,
+    "temp_method": "cosine_annealing",
+    "irregular": 0.0,
+    "eval_protocol": "svm",
+    "method": "acc"
+  },
+  "dataset": "Chinatown",
+  "run_name": "unified_amc_test",
+  "scenario": "amc_temp",
+  "total_execution_time": 2.8290793895721436,
+  "timestamp": "2025-08-26T23:17:13.982938",
+  "optimization_config": {
+    "search_steps": 20,
+    "search_time": null,
+    "n_jobs": 1,
+    "early_stopping": true,
+    "statistical_significance": true,
+    "num_trials": 5
+  }
+}

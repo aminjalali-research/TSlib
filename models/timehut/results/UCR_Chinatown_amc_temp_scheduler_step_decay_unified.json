@@ -1,0 +1,63 @@
+{
+  "acc": 0.9854227405247813,
+  "auprc": 0.9986782018368439,
+  "training_time": 13.706727743148804,
+  "final_loss": 12.628087043762207,
+  "amc_setting": {
+    "amc_instance": 10.0,
+    "amc_temporal": 7.53,
+    "amc_margin": 0.3
+  },
+  "temp_setting": {
+    "min_tau": 0.05,
+    "max_tau": 0.76,
+    "t_max": 25.0,
+    "method": "step_decay",
+    "step_size": 8,
+    "gamma": 0.5
+  },
+  "config": {
+    "batch_size": 8,
+    "lr": 0.001,
+    "repr_dims": 320,
+    "hidden_dims": 64,
+    "depth": 10,
+    "max_train_length": 3000,
+    "epochs": 100,
+    "iters": null,
+    "seed": null,
+    "gpu": 0,
+    "max_threads": null,
+    "amc_instance": 10.0,
+    "amc_temporal": 7.53,
+    "amc_margin": 0.3,
+    "min_tau": 0.05,
+    "max_tau": 0.76,
+    "t_max": 25.0,
+    "temp_method": "step_decay",
+    "temp_decay_rate": 0.95,
+    "temp_step_size": null,
+    "temp_gamma": 0.5,
+    "temp_power": 2.0,
+    "temp_steepness": 1.0,
+    "temp_warmup_epochs": 2,
+    "temp_num_cycles": 3,
+    "temp_decay_factor": 0.8,
+    "irregular": 0.0,
+    "eval_protocol": "svm",
+    "method": "acc"
+  },
+  "dataset": "Chinatown",
+  "run_name": "scheduler_step_decay",
+  "scenario": "amc_temp",
+  "total_execution_time": 13.946152925491333,
+  "timestamp": "2025-08-27T12:40:57.995336",
+  "optimization_config": {
+    "search_steps": 20,
+    "search_time": null,
+    "n_jobs": 1,
+    "early_stopping": true,
+    "statistical_significance": true,
+    "num_trials": 5
+  }
+}

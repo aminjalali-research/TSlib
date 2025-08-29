@@ -1,0 +1,309 @@
+{
+  "validation_results": [
+    {
+      "acc": 0.9795918367346939,
+      "auprc": 0.9981279224331276,
+      "training_time": 24.30733370780945,
+      "final_loss": 3.222289276123047,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 0
+    },
+    {
+      "acc": 0.967930029154519,
+      "auprc": 0.9972238909655845,
+      "training_time": 23.104413747787476,
+      "final_loss": 3.637731981277466,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 1
+    },
+    {
+      "acc": 0.9766763848396501,
+      "auprc": 0.9979944110657372,
+      "training_time": 22.64478039741516,
+      "final_loss": 4.355210876464843,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 2
+    },
+    {
+      "acc": 0.967930029154519,
+      "auprc": 0.9976811542228126,
+      "training_time": 22.615838289260864,
+      "final_loss": 3.1790559768676756,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 3
+    },
+    {
+      "acc": 0.9795918367346939,
+      "auprc": 0.9983729613981484,
+      "training_time": 24.818495512008667,
+      "final_loss": 4.435132932662964,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 4
+    },
+    {
+      "acc": 0.9825072886297376,
+      "auprc": 0.9986559985610091,
+      "training_time": 24.650535106658936,
+      "final_loss": 3.4647921085357667,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 5
+    },
+    {
+      "acc": 0.9795918367346939,
+      "auprc": 0.9985807424245638,
+      "training_time": 26.296967267990112,
+      "final_loss": 4.208889818191528,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 6
+    },
+    {
+      "acc": 0.9766763848396501,
+      "auprc": 0.9978154199153193,
+      "training_time": 24.403688430786133,
+      "final_loss": 3.6668848514556887,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 7
+    },
+    {
+      "acc": 0.9825072886297376,
+      "auprc": 0.9985329383832853,
+      "training_time": 24.95937418937683,
+      "final_loss": 4.585920953750611,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 8
+    },
+    {
+      "acc": 0.9708454810495627,
+      "auprc": 0.9980112814869179,
+      "training_time": 25.088168621063232,
+      "final_loss": 4.589551067352295,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "trial": 9
+    }
+  ],
+  "statistics": {
+    "mean_accuracy": 0.9763848396501459,
+    "std_accuracy": 0.005288150771783375,
+    "confidence_interval_95": [
+      0.973107270071717,
+      0.9796624092285747
+    ],
+    "num_trials": 10
+  },
+  "dataset": "Chinatown",
+  "run_name": "validation_study",
+  "scenario": "validation",
+  "total_execution_time": 244.8276970386505,
+  "timestamp": "2025-08-27T12:24:48.813862",
+  "config": {
+    "batch_size": 8,
+    "lr": 0.001,
+    "repr_dims": 320,
+    "hidden_dims": 64,
+    "depth": 10,
+    "max_train_length": 3000,
+    "epochs": 200,
+    "iters": null,
+    "seed": null,
+    "gpu": 0,
+    "max_threads": null,
+    "amc_instance": 0.5,
+    "amc_temporal": 0.5,
+    "amc_margin": 0.5,
+    "min_tau": 0.15,
+    "max_tau": 0.75,
+    "t_max": 10.5,
+    "temp_method": "cosine_annealing",
+    "irregular": 0.0,
+    "eval_protocol": "svm",
+    "method": "acc"
+  },
+  "optimization_config": {
+    "search_steps": 20,
+    "search_time": null,
+    "n_jobs": 1,
+    "early_stopping": true,
+    "statistical_significance": true,
+    "num_trials": 10
+  }
+}

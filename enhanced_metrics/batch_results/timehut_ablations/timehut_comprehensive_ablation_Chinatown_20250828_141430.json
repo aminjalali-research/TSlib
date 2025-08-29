@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "dataset": "Chinatown",
+    "batch_size": 8,
+    "epochs": 200,
+    "total_scenarios": 11,
+    "successful_scenarios": 0,
+    "timestamp": "20250828_141430"
+  },
+  "results": []
+}

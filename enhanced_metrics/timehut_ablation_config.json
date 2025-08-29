@@ -1,0 +1,15 @@
+{
+  "models": [
+    "TimeHUT_baseline",
+    "TimeHUT_amc_only", 
+    "TimeHUT_temp_only",
+    "TimeHUT_amc_temp",
+    "TimeHUT_optimized",
+    "TimeHUT_polynomial",
+    "TimeHUT_linear",
+    "TimeHUT_cosine"
+  ],
+  "datasets": [
+    "Chinatown"
+  ]
+}

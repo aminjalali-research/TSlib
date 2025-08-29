@@ -1,0 +1,112 @@
+{
+  "batch_info": {
+    "total_experiments": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "success_rate": 1.0,
+    "total_batch_time_seconds": 21.532596588134766,
+    "total_batch_time_minutes": 0.3588766098022461,
+    "avg_time_per_experiment": 21.532596588134766,
+    "timestamp": "20250826_160054"
+  },
+  "successful_experiments": [
+    [
+      "TimeHUT",
+      "AtrialFibrillation"
+    ]
+  ],
+  "failed_experiments": [],
+  "detailed_results": [
+    {
+      "experiment_number": 1,
+      "model": "TimeHUT",
+      "dataset": "AtrialFibrillation",
+      "model_family": "TS2vec",
+      "dataset_type": "UEA",
+      "timestamp": "2025-08-26 16:00:54",
+      "accuracy": 0.3333,
+      "f1_score": 0.0,
+      "auprc": 0.3915,
+      "status": "success",
+      "time_per_epoch_seconds": 0.0,
+      "peak_gpu_memory_mb": 0,
+      "peak_gpu_memory_gb": 0.0,
+      "flops_per_epoch": 34009626.94016924,
+      "total_gflops": 0.034009626940169235,
+      "epochs_completed": 1,
+      "total_training_time": 21.2,
+      "total_runtime": 21.53,
+      "accuracy_per_second": 0.015480724570366929,
+      "flops_efficiency": 9.80016630545085,
+      "memory_efficiency": 0.0,
+      "time_efficiency": 0.0,
+      "gflops_per_second": 0.001579638966101683,
+      "avg_gpu_memory_mb": 0,
+      "avg_gpu_utilization_percent": 0,
+      "avg_gpu_temperature_c": 0,
+      "monitoring_samples_collected": 0,
+      "performance_class": "very_poor",
+      "runtime_class": "fast",
+      "memory_class": "low",
+      "computational_intensity": "unknown",
+      "estimated_energy_kwh": 0.0,
+      "energy_efficiency": 0.0
+    }
+  ],
+  "enhanced_analysis": {
+    "summary_stats": {
+      "successful_experiments": 1,
+      "experiments_with_time_per_epoch": 0,
+      "experiments_with_gpu_memory": 0,
+      "experiments_with_flops": 1
+    },
+    "accuracy_analysis": {
+      "mean": 0.3333,
+      "median": 0.3333,
+      "std": 0.0,
+      "min": 0.3333,
+      "max": 0.3333,
+      "q25": 0.3333,
+      "q75": 0.3333
+    },
+    "time_per_epoch_analysis": {},
+    "peak_gpu_memory_analysis": {},
+    "flops_per_epoch_analysis": {
+      "mean_flops": 34009626.94016924,
+      "median_flops": 34009626.94016924,
+      "std_flops": 0.0,
+      "min_flops": 34009626.94016924,
+      "max_flops": 34009626.94016924,
+      "q25_flops": 34009626.94016924,
+      "q75_flops": 34009626.94016924,
+      "mean_gflops": 0.034009626940169235,
+      "max_gflops": 0.034009626940169235
+    },
+    "model_family_analysis": {
+      "TS2vec": {
+        "experiment_count": 1,
+        "avg_accuracy": 0.3333,
+        "max_accuracy": 0.3333,
+        "avg_flops_per_epoch": 34009626.94016924,
+        "max_flops_per_epoch": 34009626.94016924
+      }
+    },
+    "performance_champions": {
+      "accuracy_champion": {
+        "model": "TimeHUT",
+        "dataset": "AtrialFibrillation",
+        "accuracy": 0.3333,
+        "time_per_epoch": 0.0,
+        "peak_memory_mb": 0,
+        "flops_per_epoch": 34009626.94016924
+      },
+      "flops_efficiency_champion": {
+        "model": "TimeHUT",
+        "dataset": "AtrialFibrillation",
+        "flops_efficiency": 9.80016630545085,
+        "accuracy": 0.3333,
+        "flops_per_epoch": 34009626.94016924
+      }
+    }
+  }
+}

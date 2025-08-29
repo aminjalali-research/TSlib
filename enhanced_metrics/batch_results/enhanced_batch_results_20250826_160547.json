@@ -1,0 +1,170 @@
+{
+  "batch_info": {
+    "total_experiments": 2,
+    "successful_runs": 2,
+    "failed_runs": 0,
+    "success_rate": 1.0,
+    "total_batch_time_seconds": 30.48706841468811,
+    "total_batch_time_minutes": 0.5081178069114685,
+    "avg_time_per_experiment": 15.243534207344055,
+    "timestamp": "20250826_160547"
+  },
+  "successful_experiments": [
+    [
+      "TimeHUT",
+      "Chinatown"
+    ],
+    [
+      "TimeHUT",
+      "AtrialFibrillation"
+    ]
+  ],
+  "failed_experiments": [],
+  "detailed_results": [
+    {
+      "experiment_number": 1,
+      "model": "TimeHUT",
+      "dataset": "Chinatown",
+      "model_family": "TS2vec",
+      "dataset_type": "UCR",
+      "timestamp": "2025-08-26 16:05:26",
+      "accuracy": 0.9738,
+      "f1_score": 0.0,
+      "auprc": 0.9969,
+      "status": "success",
+      "time_per_epoch_seconds": 0.0,
+      "peak_gpu_memory_mb": 851.0,
+      "peak_gpu_memory_gb": 0.8310546875,
+      "flops_per_epoch": 60343541.86986151,
+      "total_gflops": 0.06034354186986152,
+      "epochs_completed": 1,
+      "total_training_time": 8.3,
+      "total_runtime": 8.91,
+      "accuracy_per_second": 0.10929292929292929,
+      "flops_efficiency": 16.13760097311031,
+      "memory_efficiency": 1.1717640423031728,
+      "time_efficiency": 0.0,
+      "gflops_per_second": 0.006772563621757746,
+      "avg_gpu_memory_mb": 738.4705882352941,
+      "avg_gpu_utilization_percent": 34.76470588235294,
+      "avg_gpu_temperature_c": 41.35294117647059,
+      "monitoring_samples_collected": 17,
+      "performance_class": "excellent",
+      "runtime_class": "very_fast",
+      "memory_class": "medium",
+      "computational_intensity": "unknown",
+      "estimated_energy_kwh": 0.00017208529411764706,
+      "energy_efficiency": 5658.821719735425
+    },
+    {
+      "experiment_number": 2,
+      "model": "TimeHUT",
+      "dataset": "AtrialFibrillation",
+      "model_family": "TS2vec",
+      "dataset_type": "UEA",
+      "timestamp": "2025-08-26 16:05:47",
+      "accuracy": 0.3333,
+      "f1_score": 0.0,
+      "auprc": 0.3915,
+      "status": "success",
+      "time_per_epoch_seconds": 0.0,
+      "peak_gpu_memory_mb": 3039.0,
+      "peak_gpu_memory_gb": 2.9677734375,
+      "flops_per_epoch": 34009626.94016924,
+      "total_gflops": 0.034009626940169235,
+      "epochs_completed": 1,
+      "total_training_time": 21.1,
+      "total_runtime": 21.49,
+      "accuracy_per_second": 0.01550953932061424,
+      "flops_efficiency": 9.80016630545085,
+      "memory_efficiency": 0.11230641658440275,
+      "time_efficiency": 0.0,
+      "gflops_per_second": 0.0015825791968436128,
+      "avg_gpu_memory_mb": 2369.7804878048782,
+      "avg_gpu_utilization_percent": 42.829268292682926,
+      "avg_gpu_temperature_c": 49.34146341463415,
+      "monitoring_samples_collected": 41,
+      "performance_class": "very_poor",
+      "runtime_class": "fast",
+      "memory_class": "very_high",
+      "computational_intensity": "unknown",
+      "estimated_energy_kwh": 0.0005113338753387533,
+      "energy_efficiency": 651.8246024267261
+    }
+  ],
+  "enhanced_analysis": {
+    "summary_stats": {
+      "successful_experiments": 2,
+      "experiments_with_time_per_epoch": 0,
+      "experiments_with_gpu_memory": 2,
+      "experiments_with_flops": 2
+    },
+    "accuracy_analysis": {
+      "mean": 0.65355,
+      "median": 0.65355,
+      "std": 0.32025000000000003,
+      "min": 0.3333,
+      "max": 0.9738,
+      "q25": 0.493425,
+      "q75": 0.8136749999999999
+    },
+    "time_per_epoch_analysis": {},
+    "peak_gpu_memory_analysis": {
+      "mean_mb": 1945.0,
+      "median_mb": 1945.0,
+      "std_mb": 1094.0,
+      "min_mb": 851.0,
+      "max_mb": 3039.0,
+      "q25_mb": 1398.0,
+      "q75_mb": 2492.0,
+      "mean_gb": 1.8994140625,
+      "max_gb": 2.9677734375
+    },
+    "flops_per_epoch_analysis": {
+      "mean_flops": 47176584.40501538,
+      "median_flops": 47176584.40501538,
+      "std_flops": 13166957.464846138,
+      "min_flops": 34009626.94016924,
+      "max_flops": 60343541.86986151,
+      "q25_flops": 40593105.672592305,
+      "q75_flops": 53760063.13743845,
+      "mean_gflops": 0.047176584405015376,
+      "max_gflops": 0.06034354186986152
+    },
+    "model_family_analysis": {
+      "TS2vec": {
+        "experiment_count": 2,
+        "avg_accuracy": 0.65355,
+        "max_accuracy": 0.9738,
+        "avg_peak_memory_mb": 1945.0,
+        "max_peak_memory_mb": 3039.0,
+        "avg_flops_per_epoch": 47176584.40501538,
+        "max_flops_per_epoch": 60343541.86986151
+      }
+    },
+    "performance_champions": {
+      "accuracy_champion": {
+        "model": "TimeHUT",
+        "dataset": "Chinatown",
+        "accuracy": 0.9738,
+        "time_per_epoch": 0.0,
+        "peak_memory_mb": 851.0,
+        "flops_per_epoch": 60343541.86986151
+      },
+      "flops_efficiency_champion": {
+        "model": "TimeHUT",
+        "dataset": "Chinatown",
+        "flops_efficiency": 16.13760097311031,
+        "accuracy": 0.9738,
+        "flops_per_epoch": 60343541.86986151
+      },
+      "memory_efficiency_champion": {
+        "model": "TimeHUT",
+        "dataset": "Chinatown",
+        "memory_efficiency": 1.1717640423031728,
+        "accuracy": 0.9738,
+        "peak_memory_mb": 851.0
+      }
+    }
+  }
+}

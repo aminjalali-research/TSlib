@@ -1,0 +1,1531 @@
+{
+  "ablation_design": {
+    "component_ablations": {
+      "baseline_comparison": {
+        "description": "Compare TimeHUT components against baseline TS2Vec",
+        "scenarios": [
+          {
+            "name": "pure_ts2vec",
+            "description": "Pure TS2Vec without any TimeHUT enhancements",
+            "config": {
+              "amc_instance": 0.0,
+              "amc_temporal": 0.0,
+              "temperature_scheduling": false,
+              "enhanced_losses": false
+            }
+          },
+          {
+            "name": "timehut_minimal",
+            "description": "TimeHUT with minimal enhancements",
+            "config": {
+              "amc_instance": 0.1,
+              "amc_temporal": 0.1,
+              "temperature_scheduling": false,
+              "enhanced_losses": true
+            }
+          },
+          {
+            "name": "timehut_full",
+            "description": "TimeHUT with all enhancements",
+            "config": {
+              "amc_instance": 1.0,
+              "amc_temporal": 0.5,
+              "temperature_scheduling": true,
+              "enhanced_losses": true,
+              "min_tau": 0.15,
+              "max_tau": 0.75,
+              "t_max": 10.5
+            }
+          }
+        ]
+      },
+      "amc_component_analysis": {
+        "description": "Individual AMC component effects",
+        "components": [
+          {
+            "name": "instance_only",
+            "description": "Only instance-wise contrastive loss",
+            "config": {
+              "amc_instance": 1.0,
+              "amc_temporal": 0.0,
+              "amc_margin": 0.5
+            }
+          },
+          {
+            "name": "temporal_only",
+            "description": "Only temporal contrastive loss",
+            "config": {
+              "amc_instance": 0.0,
+              "amc_temporal": 1.0,
+              "amc_margin": 0.5
+            }
+          },
+          {
+            "name": "both_amc",
+            "description": "Both instance and temporal AMC losses",
+            "config": {
+              "amc_instance": 1.0,
+              "amc_temporal": 1.0,
+              "amc_margin": 0.5
+            }
+          },
+          {
+            "name": "margin_sensitivity",
+            "description": "Test different margin values",
+            "parameter_sweep": {
+              "amc_margin": [
+                0.1,
+                0.3,
+                0.5,
+                0.7,
+                1.0
+              ],
+              "amc_instance": [
+                1.0
+              ],
+              "amc_temporal": [
+                0.5
+              ]
+            }
+          }
+        ]
+      },
+      "temperature_scheduler_analysis": {
+        "description": "Temperature scheduling method comparison",
+        "schedulers": [
+          {
+            "name": "no_scheduling",
+            "description": "No temperature scheduling (baseline)",
+            "config": {
+              "temperature_scheduling": false
+            }
+          },
+          {
+            "name": "linear_scheduling",
+            "description": "Linear temperature decay",
+            "config": {
+              "temperature_scheduling": true,
+              "scheduler_method": "linear",
+              "min_tau": 0.1,
+              "max_tau": 0.8
+            }
+          },
+          {
+            "name": "cosine_scheduling",
+            "description": "Cosine annealing temperature",
+            "config": {
+              "temperature_scheduling": true,
+              "scheduler_method": "cosine",
+              "min_tau": 0.1,
+              "max_tau": 0.8,
+              "t_max": 10.0
+            }
+          },
+          {
+            "name": "exponential_scheduling",
+            "description": "Exponential temperature decay",
+            "config": {
+              "temperature_scheduling": true,
+              "scheduler_method": "exponential",
+              "min_tau": 0.1,
+              "max_tau": 0.8,
+              "decay_rate": 0.95
+            }
+          },
+          {
+            "name": "sigmoid_scheduling",
+            "description": "Sigmoid temperature scheduling",
+            "config": {
+              "temperature_scheduling": true,
+              "scheduler_method": "sigmoid",
+              "min_tau": 0.1,
+              "max_tau": 0.8,
+              "steepness": 5.0
+            }
+          }
+        ]
+      },
+      "loss_component_ablations": {
+        "description": "Individual loss component effects",
+        "loss_components": [
+          {
+            "name": "instance_contrastive_only",
+            "description": "Only instance contrastive loss",
+            "config": {
+              "enable_instance_contrastive": true,
+              "enable_temporal_contrastive": false,
+              "enable_instance_discriminative": false,
+              "enable_temporal_discriminative": false
+            }
+          },
+          {
+            "name": "temporal_contrastive_only",
+            "description": "Only temporal contrastive loss",
+            "config": {
+              "enable_instance_contrastive": false,
+              "enable_temporal_contrastive": true,
+              "enable_instance_discriminative": false,
+              "enable_temporal_discriminative": false
+            }
+          },
+          {
+            "name": "all_losses",
+            "description": "All loss components enabled",
+            "config": {
+              "enable_instance_contrastive": true,
+              "enable_temporal_contrastive": true,
+              "enable_instance_discriminative": true,
+              "enable_temporal_discriminative": true
+            }
+          }
+        ]
+      }
+    },
+    "interaction_ablations": {
+      "description": "Component interaction effects",
+      "interactions": [
+        {
+          "name": "amc_temp_interaction",
+          "description": "AMC and temperature scheduling interaction",
+          "factor_grid": {
+            "amc_levels": [
+              0.0,
+              0.5,
+              1.0,
+              2.0
+            ],
+            "temp_scheduling": [
+              false,
+              true
+            ],
+            "temp_methods": [
+              "linear",
+              "cosine"
+            ]
+          }
+        },
+        {
+          "name": "loss_weight_interactions",
+          "description": "Loss component weight interactions",
+          "weight_combinations": [
+            {
+              "instance": 1.0,
+              "temporal": 0.0
+            },
+            {
+              "instance": 0.0,
+              "temporal": 1.0
+            },
+            {
+              "instance": 1.0,
+              "temporal": 1.0
+            },
+            {
+              "instance": 2.0,
+              "temporal": 1.0
+            },
+            {
+              "instance": 1.0,
+              "temporal": 2.0
+            }
+          ]
+        }
+      ]
+    },
+    "sensitivity_analysis": {
+      "description": "Parameter sensitivity analysis",
+      "parameters": {
+        "amc_instance": {
+          "range": [
+            0.0,
+            0.1,
+            0.2,
+            0.5,
+            1.0,
+            2.0,
+            5.0
+          ],
+          "baseline": 1.0,
+          "description": "Instance AMC coefficient sensitivity"
+        },
+        "amc_temporal": {
+          "range": [
+            0.0,
+            0.1,
+            0.2,
+            0.5,
+            1.0,
+            2.0,
+            5.0
+          ],
+          "baseline": 0.5,
+          "description": "Temporal AMC coefficient sensitivity"
+        },
+        "amc_margin": {
+          "range": [
+            0.1,
+            0.2,
+            0.3,
+            0.5,
+            0.7,
+            1.0
+          ],
+          "baseline": 0.5,
+          "description": "AMC margin sensitivity"
+        },
+        "min_tau": {
+          "range": [
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.25,
+            0.3
+          ],
+          "baseline": 0.15,
+          "description": "Minimum temperature sensitivity"
+        },
+        "max_tau": {
+          "range": [
+            0.6,
+            0.7,
+            0.75,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "baseline": 0.75,
+          "description": "Maximum temperature sensitivity"
+        }
+      }
+    }
+  },
+  "experiments": [
+    {
+      "experiment_type": "baseline_comparison",
+      "scenario_name": "pure_ts2vec",
+      "description": "Pure TS2Vec without any TimeHUT enhancements",
+      "config": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": false,
+        "enhanced_losses": false
+      },
+      "datasets": [
+        "Chinatown",
+        "AtrialFibrillation",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "baseline_comparison",
+      "scenario_name": "timehut_minimal",
+      "description": "TimeHUT with minimal enhancements",
+      "config": {
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "temperature_scheduling": false,
+        "enhanced_losses": true
+      },
+      "datasets": [
+        "Chinatown",
+        "AtrialFibrillation",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "baseline_comparison",
+      "scenario_name": "timehut_full",
+      "description": "TimeHUT with all enhancements",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "temperature_scheduling": true,
+        "enhanced_losses": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "datasets": [
+        "Chinatown",
+        "AtrialFibrillation",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "instance_only",
+      "description": "Only instance-wise contrastive loss",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "AtrialFibrillation"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "temporal_only",
+      "description": "Only temporal contrastive loss",
+      "config": {
+        "amc_instance": 0.0,
+        "amc_temporal": 1.0,
+        "amc_margin": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "AtrialFibrillation"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "both_amc",
+      "description": "Both instance and temporal AMC losses",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 1.0,
+        "amc_margin": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "AtrialFibrillation"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "margin_sensitivity_(0.1, 1.0, 0.5)",
+      "description": "Test different margin values",
+      "config": {
+        "amc_margin": 0.1,
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "margin_sensitivity_(0.3, 1.0, 0.5)",
+      "description": "Test different margin values",
+      "config": {
+        "amc_margin": 0.3,
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "margin_sensitivity_(0.5, 1.0, 0.5)",
+      "description": "Test different margin values",
+      "config": {
+        "amc_margin": 0.5,
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "margin_sensitivity_(0.7, 1.0, 0.5)",
+      "description": "Test different margin values",
+      "config": {
+        "amc_margin": 0.7,
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_component",
+      "scenario_name": "margin_sensitivity_(1.0, 1.0, 0.5)",
+      "description": "Test different margin values",
+      "config": {
+        "amc_margin": 1.0,
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "temperature_scheduler",
+      "scenario_name": "no_scheduling",
+      "description": "No temperature scheduling (baseline)",
+      "config": {
+        "temperature_scheduling": false
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "temperature_scheduler",
+      "scenario_name": "linear_scheduling",
+      "description": "Linear temperature decay",
+      "config": {
+        "temperature_scheduling": true,
+        "scheduler_method": "linear",
+        "min_tau": 0.1,
+        "max_tau": 0.8
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "temperature_scheduler",
+      "scenario_name": "cosine_scheduling",
+      "description": "Cosine annealing temperature",
+      "config": {
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine",
+        "min_tau": 0.1,
+        "max_tau": 0.8,
+        "t_max": 10.0
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "temperature_scheduler",
+      "scenario_name": "exponential_scheduling",
+      "description": "Exponential temperature decay",
+      "config": {
+        "temperature_scheduling": true,
+        "scheduler_method": "exponential",
+        "min_tau": 0.1,
+        "max_tau": 0.8,
+        "decay_rate": 0.95
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "temperature_scheduler",
+      "scenario_name": "sigmoid_scheduling",
+      "description": "Sigmoid temperature scheduling",
+      "config": {
+        "temperature_scheduling": true,
+        "scheduler_method": "sigmoid",
+        "min_tau": 0.1,
+        "max_tau": 0.8,
+        "steepness": 5.0
+      },
+      "datasets": [
+        "Chinatown",
+        "SyntheticControl"
+      ],
+      "epochs": 200,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "loss_component",
+      "scenario_name": "instance_contrastive_only",
+      "description": "Only instance contrastive loss",
+      "config": {
+        "enable_instance_contrastive": true,
+        "enable_temporal_contrastive": false,
+        "enable_instance_discriminative": false,
+        "enable_temporal_discriminative": false
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "loss_component",
+      "scenario_name": "temporal_contrastive_only",
+      "description": "Only temporal contrastive loss",
+      "config": {
+        "enable_instance_contrastive": false,
+        "enable_temporal_contrastive": true,
+        "enable_instance_discriminative": false,
+        "enable_temporal_discriminative": false
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "loss_component",
+      "scenario_name": "all_losses",
+      "description": "All loss components enabled",
+      "config": {
+        "enable_instance_contrastive": true,
+        "enable_temporal_contrastive": true,
+        "enable_instance_discriminative": true,
+        "enable_temporal_discriminative": true
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc0.0_no_temp",
+      "description": "AMC without temperature",
+      "config": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": false
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc0.0_temp_linear",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": true,
+        "scheduler_method": "linear",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc0.0_temp_cosine",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc0.5_no_temp",
+      "description": "AMC without temperature",
+      "config": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.25,
+        "temperature_scheduling": false
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc0.5_temp_linear",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.25,
+        "temperature_scheduling": true,
+        "scheduler_method": "linear",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc0.5_temp_cosine",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.25,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc1.0_no_temp",
+      "description": "AMC without temperature",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "temperature_scheduling": false
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc1.0_temp_linear",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "temperature_scheduling": true,
+        "scheduler_method": "linear",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc1.0_temp_cosine",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc2.0_no_temp",
+      "description": "AMC without temperature",
+      "config": {
+        "amc_instance": 2.0,
+        "amc_temporal": 1.0,
+        "temperature_scheduling": false
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc2.0_temp_linear",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 2.0,
+        "amc_temporal": 1.0,
+        "temperature_scheduling": true,
+        "scheduler_method": "linear",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "amc_temp_interaction",
+      "scenario_name": "amc2.0_temp_cosine",
+      "description": "AMC-temperature interaction",
+      "config": {
+        "amc_instance": 2.0,
+        "amc_temporal": 1.0,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine",
+        "min_tau": 0.15,
+        "max_tau": 0.75
+      },
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 150,
+      "repeats": 3
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_0.0",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 0.0,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_0.1",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 0.1,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 0.1,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_0.2",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 0.2,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 0.2,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_0.5",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 0.5,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_1.0",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 1.0,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_2.0",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 2.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 2.0,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_instance_sensitivity_5.0",
+      "description": "Instance AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 5.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_instance",
+      "parameter_value": 5.0,
+      "baseline_value": 1.0,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_0.0",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 0.0,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_0.1",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 0.1,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_0.2",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.2,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 0.2,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_0.5",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 0.5,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_1.0",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 1.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 1.0,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_2.0",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 2.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 2.0,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_temporal_sensitivity_5.0",
+      "description": "Temporal AMC coefficient sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 5.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_temporal",
+      "parameter_value": 5.0,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_margin_sensitivity_0.1",
+      "description": "AMC margin sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.1,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_margin",
+      "parameter_value": 0.1,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_margin_sensitivity_0.2",
+      "description": "AMC margin sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.2,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_margin",
+      "parameter_value": 0.2,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_margin_sensitivity_0.3",
+      "description": "AMC margin sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.3,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_margin",
+      "parameter_value": 0.3,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_margin_sensitivity_0.5",
+      "description": "AMC margin sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_margin",
+      "parameter_value": 0.5,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_margin_sensitivity_0.7",
+      "description": "AMC margin sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.7,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_margin",
+      "parameter_value": 0.7,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "amc_margin_sensitivity_1.0",
+      "description": "AMC margin sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 1.0,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "amc_margin",
+      "parameter_value": 1.0,
+      "baseline_value": 0.5,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "min_tau_sensitivity_0.05",
+      "description": "Minimum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.05,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "min_tau",
+      "parameter_value": 0.05,
+      "baseline_value": 0.15,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "min_tau_sensitivity_0.1",
+      "description": "Minimum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.1,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "min_tau",
+      "parameter_value": 0.1,
+      "baseline_value": 0.15,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "min_tau_sensitivity_0.15",
+      "description": "Minimum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "min_tau",
+      "parameter_value": 0.15,
+      "baseline_value": 0.15,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "min_tau_sensitivity_0.2",
+      "description": "Minimum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.2,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "min_tau",
+      "parameter_value": 0.2,
+      "baseline_value": 0.15,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "min_tau_sensitivity_0.25",
+      "description": "Minimum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.25,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "min_tau",
+      "parameter_value": 0.25,
+      "baseline_value": 0.15,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "min_tau_sensitivity_0.3",
+      "description": "Minimum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.3,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "min_tau",
+      "parameter_value": 0.3,
+      "baseline_value": 0.15,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "max_tau_sensitivity_0.6",
+      "description": "Maximum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.6,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "max_tau",
+      "parameter_value": 0.6,
+      "baseline_value": 0.75,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "max_tau_sensitivity_0.7",
+      "description": "Maximum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.7,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "max_tau",
+      "parameter_value": 0.7,
+      "baseline_value": 0.75,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "max_tau_sensitivity_0.75",
+      "description": "Maximum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "max_tau",
+      "parameter_value": 0.75,
+      "baseline_value": 0.75,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "max_tau_sensitivity_0.8",
+      "description": "Maximum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.8,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "max_tau",
+      "parameter_value": 0.8,
+      "baseline_value": 0.75,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "max_tau_sensitivity_0.9",
+      "description": "Maximum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.9,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "max_tau",
+      "parameter_value": 0.9,
+      "baseline_value": 0.75,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    },
+    {
+      "experiment_type": "sensitivity_analysis",
+      "scenario_name": "max_tau_sensitivity_1.0",
+      "description": "Maximum temperature sensitivity",
+      "config": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 1.0,
+        "t_max": 10.5
+      },
+      "parameter_under_test": "max_tau",
+      "parameter_value": 1.0,
+      "baseline_value": 0.75,
+      "datasets": [
+        "Chinatown"
+      ],
+      "epochs": 100,
+      "repeats": 5
+    }
+  ]
+}

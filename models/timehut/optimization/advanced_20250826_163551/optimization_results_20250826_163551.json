@@ -1,0 +1,337 @@
+{
+  "method": "evolutionary",
+  "n_generations": 20,
+  "population_size": 15,
+  "best_params": {
+    "amc_instance": 0.9998259923456632,
+    "amc_temporal": 1.5365911861046486,
+    "amc_margin": 1.3286078168237845,
+    "min_tau": 0.24637153171063597,
+    "max_tau": 0.4688010800908087,
+    "t_max": 5.0,
+    "learning_rate": 0.005147802761633466,
+    "weight_decay": 0.003074119278349708,
+    "dropout_rate": 0.4263145732497097,
+    "scheduler_method": "cosine",
+    "batch_size": 4,
+    "hidden_dim": 128,
+    "n_layers": 3
+  },
+  "best_score": 0.8597658801147855,
+  "fitness_history": [
+    0.8428515425867895,
+    0.8456544591357348,
+    0.8456544591357348,
+    0.8456544591357348,
+    0.8475461025691029,
+    0.8537568717748316,
+    0.8537568717748316,
+    0.8537568717748316,
+    0.8537568717748316,
+    0.8547262502197449,
+    0.8550305887831297,
+    0.8580577240460286,
+    0.8580577240460286,
+    0.8597658801147855,
+    0.8597658801147855,
+    0.8597658801147855,
+    0.8597658801147855,
+    0.8597658801147855,
+    0.8597658801147855,
+    0.8597658801147855
+  ],
+  "diversity_history": [
+    1.678890767730028,
+    1.5958604798322222,
+    1.3792664491811168,
+    1.4019388950976515,
+    1.4294368917476872,
+    1.6172624450686308,
+    1.4913988638500606,
+    1.5083881890140447,
+    1.3652038487875942,
+    1.4254184362929854,
+    1.2295727213034975,
+    1.1715439723426826,
+    1.1524926030803977,
+    1.1996369283221517,
+    1.2427814399517647,
+    1.1275638194842554,
+    1.0538535561527376,
+    0.9433291833048287,
+    1.0862375814323642,
+    1.098699940103902
+  ],
+  "final_population": [
+    {
+      "genes": {
+        "amc_instance": 0.9998259923456632,
+        "amc_temporal": 1.5365911861046486,
+        "amc_margin": 1.3286078168237845,
+        "min_tau": 0.24637153171063597,
+        "max_tau": 0.4688010800908087,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.4263145732497097,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": 0.8597658801147855
+    },
+    {
+      "genes": {
+        "amc_instance": 0.7948656979477029,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.5,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4490461359511946,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.32180309757085857,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9998259923456632,
+        "amc_temporal": 1.3683365908003178,
+        "amc_margin": 1.2564836657412768,
+        "min_tau": 0.24637153171063597,
+        "max_tau": 0.44696631952302074,
+        "t_max": 8.679555729209607,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.4263145732497097,
+        "scheduler_method": "polynomial",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9929719876031325,
+        "amc_temporal": 1.5365911861046486,
+        "amc_margin": 1.5,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.0004079617366462364,
+        "dropout_rate": 0.4263145732497097,
+        "scheduler_method": "exponential",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9909545561776195,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.3286078168237845,
+        "min_tau": 0.30421129307887596,
+        "max_tau": 0.4674606184655028,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.0009097275800248814,
+        "dropout_rate": 0.3454344359844267,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 4
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 1.0720122658333822,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.5,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4490461359511946,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.35906955817436564,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.7948656979477029,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.5,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4490461359511946,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.0009097275800248814,
+        "dropout_rate": 0.32180309757085857,
+        "scheduler_method": "cosine",
+        "batch_size": 8,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 1.4883750038248986,
+        "amc_temporal": 1.5365911861046486,
+        "amc_margin": 1.5,
+        "min_tau": 0.24637153171063597,
+        "max_tau": 0.4490461359511946,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.0059005557454505815,
+        "dropout_rate": 0.35906955817436564,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9929719876031325,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.3632672114260562,
+        "min_tau": 0.23700878928208619,
+        "max_tau": 0.4490461359511946,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.0009097275800248814,
+        "dropout_rate": 0.3836273765085408,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9929719876031325,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.5,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4490461359511946,
+        "t_max": 5.0,
+        "learning_rate": 0.01,
+        "weight_decay": 0.0009097275800248814,
+        "dropout_rate": 0.35906955817436564,
+        "scheduler_method": "cosine",
+        "batch_size": 16,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9998259923456632,
+        "amc_temporal": 1.5365911861046486,
+        "amc_margin": 1.3286078168237845,
+        "min_tau": 0.24637153171063597,
+        "max_tau": 0.4688010800908087,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.4220514126890863,
+        "scheduler_method": "cosine",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9998259923456632,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.2564836657412768,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.000784161422965869,
+        "dropout_rate": 0.4263145732497097,
+        "scheduler_method": "polynomial",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9998259923456632,
+        "amc_temporal": 1.3683365908003178,
+        "amc_margin": 1.5,
+        "min_tau": 0.21598736556090736,
+        "max_tau": 0.4688010800908087,
+        "t_max": 8.679555729209607,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.4263145732497097,
+        "scheduler_method": "linear",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 4
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.8948903466914444,
+        "amc_temporal": 1.2644904267862354,
+        "amc_margin": 1.2564836657412768,
+        "min_tau": 0.24637153171063597,
+        "max_tau": 0.4,
+        "t_max": 9.690392420089024,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.3901030821800081,
+        "scheduler_method": "polynomial",
+        "batch_size": 4,
+        "hidden_dim": 128,
+        "n_layers": 3
+      },
+      "fitness": -Infinity
+    },
+    {
+      "genes": {
+        "amc_instance": 0.9998259923456632,
+        "amc_temporal": 1.2382328146829267,
+        "amc_margin": 1.5,
+        "min_tau": 0.2865137379032518,
+        "max_tau": 0.4688010800908087,
+        "t_max": 5.0,
+        "learning_rate": 0.005147802761633466,
+        "weight_decay": 0.003074119278349708,
+        "dropout_rate": 0.4263145732497097,
+        "scheduler_method": "cosine",
+        "batch_size": 32,
+        "hidden_dim": 128,
+        "n_layers": 4
+      },
+      "fitness": -Infinity
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "baseline_experiments": [
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep0",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 2,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 3.9273223876953125,
+      "status": "success",
+      "stdout": "============================================================\n\ud83d\ude80 TimeHUT INTEGRATED TRAINING\n============================================================\nDataset: Chinatown\nScenario: baseline\nDescription: Standard TimeHUT training without AMC or temperature scheduling\nArguments: Namespace(adaptation_rate=0.1, amc_instance=0.0, amc_margin=0.5, amc_temporal=0.0, batch_size=8, bias=0.0, dataroot='/home/amin/TSlib/datasets', dataset='Chinatown', decay_factor=0.8, epochs=2, eval=False, frequency=1.0, gpu=0, irregular=0, iters=None, loader='UCR', lr=0.001, max_tau=0.75, max_threads=None, max_train_length=3000, method='acc', min_tau=0.15, momentum=0.9, num_cycles=3, phase=0.0, repr_dims=320, restart_mult=1.5, restart_period=5.0, run_name='baseline_baseline_Chinatown_rep0', save_every=None, scenario='baseline', search_steps=20, seed=2002, skip_search=False, t_max=10.5)\n============================================================\n\u26a1 ULTRA-PERFORMANCE optimizations enabled:\n  - Mixed precision: True\n  - CUDA benchmark: True\n  - Memory optimization: True\n  - Dynamic batch size: True\n  - Fast inference: True\n  - TF32 enabled: True\nLoading data... done\n\n\ud83d\udd27 Running BASELINE scenario...\nNo AMC losses or temperature scheduling\n\ud83d\udcc8 Optimized batch size: 8 \u2192 32\n\u26a1 Using mixed precision for full training\n\ud83d\ude80 Full training with batch size: 32\nEpoch #0: loss=14.337970733642578, tau = 1\nEpoch #1: loss=10.35547161102295, tau = 1\n\n\u23f1\ufe0f Training time: 0:00:01.514898 (0.757s/epoch)\n\nEvaluation result on test (full train): {'acc': 0.967930029154519, 'auprc': 0.9961080220119082}\n\u23f1\ufe0f Evaluation time: 0.10s\n\n\ud83d\udcbe Results saved to: results/UCR_Chinatown_acc_integrated.json\n\u2705 Finished!\n\n\ud83d\udcca FINAL RESULTS:\nAccuracy: 0.9679\nAUPRC: 0.9961\n",
+      "stderr": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\n",
+      "timestamp": "2025-08-26T16:15:04.453612",
+      "metrics": {
+        "accuracy": 0.9679,
+        "auprc": 0.9961,
+        "training_time": 0.0
+      }
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Chinatown_rep0",
+      "dataset": "Chinatown",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 2,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 3.496809244155884,
+      "status": "success",
+      "stdout": "============================================================\n\ud83d\ude80 TimeHUT INTEGRATED TRAINING\n============================================================\nDataset: Chinatown\nScenario: amc_temp\nDescription: Training with both AMC losses and temperature scheduling\nArguments: Namespace(adaptation_rate=0.1, amc_instance=0.1, amc_margin=0.5, amc_temporal=0.1, batch_size=8, bias=0.0, dataroot='/home/amin/TSlib/datasets', dataset='Chinatown', decay_factor=0.8, epochs=2, eval=False, frequency=1.0, gpu=0, irregular=0, iters=None, loader='UCR', lr=0.001, max_tau=0.75, max_threads=None, max_train_length=3000, method='acc', min_tau=0.15, momentum=0.9, num_cycles=3, phase=0.0, repr_dims=320, restart_mult=1.5, restart_period=5.0, run_name='baseline_amc_temp_Chinatown_rep0', save_every=None, scenario='amc_temp', search_steps=20, seed=2002, skip_search=False, t_max=10.5)\n============================================================\n\u26a1 ULTRA-PERFORMANCE optimizations enabled:\n  - Mixed precision: True\n  - CUDA benchmark: True\n  - Memory optimization: True\n  - Dynamic batch size: True\n  - Fast inference: True\n  - TF32 enabled: True\nLoading data... done\n\n\ud83d\udd27 Running AMC + TEMPERATURE scenario...\nUsing default temperature parameters for Chinatown (size: 20)\nAMC Settings: {'amc_instance': 0.1, 'amc_temporal': 0.1, 'amc_margin': 0.5}\nTemperature Settings: {'min_tau': 0.15, 'max_tau': 0.75, 't_max': 10.5}\n\ud83d\udcc8 Optimized batch size: 8 \u2192 32\n\u26a1 Using mixed precision for full training\n\ud83d\ude80 Full training with batch size: 32\nEpoch #0: loss=19.542327880859375, tau = 0.75\nEpoch #1: loss=15.153640747070312, tau = 0.7366719245910645\n\n\u23f1\ufe0f Training time: 0:00:01.450866 (0.725s/epoch)\n\nEvaluation result on test (full train): {'acc': 0.967930029154519, 'auprc': 0.9962304050895388}\n\u23f1\ufe0f Evaluation time: 0.10s\n\n\ud83d\udcbe Results saved to: results/UCR_Chinatown_acc_amc_temp_integrated.json\n\u2705 Finished!\n\n\ud83d\udcca FINAL RESULTS:\nAccuracy: 0.9679\nAUPRC: 0.9962\n",
+      "stderr": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\n",
+      "timestamp": "2025-08-26T16:15:07.951341",
+      "metrics": {
+        "accuracy": 0.9679,
+        "auprc": 0.9962,
+        "training_time": 0.0
+      }
+    }
+  ]
+}

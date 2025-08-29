@@ -1,0 +1,7 @@
+Scenario,Total_Training_Time,Accuracy,Peak_GPU_Memory (M),GFLOPs_Per_Epoch,GFLOPs/Epochs
+Baseline,9.36,0.965192,1330.6,0.51,100
+AMC_Instance,11.09,0.982507,1315.9,0.65,130
+AMC_Temporal,12.34,0.979592,1341.6,0.71,140
+AMC_Both,12.96,0.982507,1367.6,0.69,141
+Temperature_Scheduling,9.23,0.981517,1329.2,0.58,116
+AMC_Temperature_Cosine,12.95,0.985423,1303.4,0.85,170

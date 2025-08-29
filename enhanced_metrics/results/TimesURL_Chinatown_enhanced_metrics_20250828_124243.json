@@ -1,0 +1,66 @@
+{
+  "system_info": {
+    "timestamp": "2025-08-28 12:42:15 UTC",
+    "cpu_count": 16,
+    "memory_total_gb": 15.3,
+    "python_version": "3.11.5",
+    "working_directory": "/home/amin/TSlib",
+    "platform": "linux",
+    "cpu_freq_max_mhz": 4825.0,
+    "cpu_freq_current_mhz": 3.73225,
+    "torch_available": false
+  },
+  "gpu_info": {
+    "gpu_available": false,
+    "reason": "GPUtil not installed"
+  },
+  "start_time": 1756399335.9544773,
+  "end_time": 1756399363.1656384,
+  "total_runtime": 27.21,
+  "model_metrics": {
+    "model": "TimesURL",
+    "dataset": "Chinatown",
+    "return_code": 0,
+    "status": "success",
+    "stdout_lines": 46,
+    "stderr_lines": 1
+  },
+  "performance_metrics": {
+    "accuracy": 0.9854,
+    "training_time": 26.9,
+    "flops_per_epoch": 112641278.15707481
+  },
+  "resource_metrics": {
+    "peak_gpu_memory_mb": 0,
+    "avg_gpu_memory_mb": 0,
+    "std_gpu_memory_mb": 0,
+    "avg_gpu_temperature_c": 0,
+    "max_gpu_temperature_c": 0,
+    "avg_gpu_utilization_percent": 0,
+    "max_gpu_utilization_percent": 0,
+    "monitoring_samples_collected": 0
+  },
+  "computational_metrics": {},
+  "efficiency_metrics": {},
+  "training_dynamics": {},
+  "enhanced_metrics": {
+    "model_name": "TimesURL",
+    "dataset_name": "Chinatown",
+    "model_family": "TimesURL",
+    "dataset_type": "UCR",
+    "accuracy": 0.9854,
+    "time_per_epoch_seconds": 0.0,
+    "peak_gpu_memory_mb": 0,
+    "flops_per_epoch": 112641278.15707481,
+    "epochs_completed": 1,
+    "total_training_time": 26.9,
+    "accuracy_per_second": 0.0362146269753767,
+    "total_gflops": 0.11264127815707481,
+    "flops_efficiency": 8.748125164434747,
+    "gflops_per_second": 0.004139701512571658,
+    "runtime_class": "fast",
+    "performance_class": "excellent",
+    "memory_class": "low",
+    "computational_intensity": "unknown"
+  }
+}

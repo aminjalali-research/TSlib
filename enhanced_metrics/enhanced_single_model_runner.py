@@ -320,6 +320,8 @@ class EnhancedSingleModelRunner:
             '--datasets', dataset,
             '--optimization',
             '--optimization-mode', 'fair',  # Use fair mode for consistency
+            '--batch-size', '8',  # Set batch size to 8
+            '--force-epochs', '200',  # Set epochs to 200
             '--timeout', str(timeout)
         ]
         

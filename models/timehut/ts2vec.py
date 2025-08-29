@@ -167,6 +167,9 @@ class TS2Vec:
                         tau = min_tau + 0.5 * (max_tau - min_tau) * (1 + math.cos(np.pi * adjusted_epoch / adjusted_t_max))
                 elif method == 'constant':
                     tau = max_tau
+                elif method == 'no_scheduling':
+                    # Fixed tau = 1.0 for no scheduling (original TimeHUT behavior)
+                    tau = 1.0
                 elif method == 'cyclic':
                     cycle_length = self.temp_settings.get('cycle_length', t_max / 3)
                     cycle_pos = (self.n_epochs % cycle_length) / cycle_length

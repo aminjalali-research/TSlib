@@ -1,0 +1,18 @@
+{
+  "models": [
+    "TimesURL",
+    "SoftCLT",
+    "TimeHUT", 
+    "TS2vec",
+    "CoST",
+    "CPC",
+    "TS_TCC",
+    "TLoss",
+    "TNC",
+    "TFC",
+    "MF_CLR"
+  ],
+  "datasets": [
+    "Chinatown"
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "params": {
+      "amc_instance": 0.9998259923456632,
+      "amc_temporal": 1.5365911861046486,
+      "amc_margin": 1.3286078168237845,
+      "min_tau": 0.24637153171063597,
+      "max_tau": 0.4688010800908087,
+      "t_max": 5.0,
+      "learning_rate": 0.005147802761633466,
+      "weight_decay": 0.003074119278349708,
+      "dropout_rate": 0.4263145732497097,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 3
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5647989539550904,
+    "memory_efficiency": 0.4680608932376752,
+    "multi_objective_score": 0.8597658801147855
+  },
+  {
+    "params": {
+      "amc_instance": 0.9011657401577331,
+      "amc_temporal": 1.5365911861046486,
+      "amc_margin": 1.3286078168237845,
+      "min_tau": 0.24637153171063597,
+      "max_tau": 0.404674122361275,
+      "t_max": 5.0,
+      "learning_rate": 0.0012408706217558524,
+      "weight_decay": 0.003074119278349708,
+      "dropout_rate": 0.48544407298627745,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 3
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5675836309560837,
+    "memory_efficiency": 0.4562071575772577,
+    "multi_objective_score": 0.8591374419489425
+  },
+  {
+    "params": {
+      "amc_instance": 0.9891639733459645,
+      "amc_temporal": 1.7107503270915718,
+      "amc_margin": 1.2564836657412768,
+      "min_tau": 0.17321391400525177,
+      "max_tau": 0.4,
+      "t_max": 7.630547594616139,
+      "learning_rate": 0.0031485376520579596,
+      "weight_decay": 0.003074119278349708,
+      "dropout_rate": 0.3989472847583467,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 3
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.551747227714648,
+    "memory_efficiency": 0.47149935948392363,
+    "multi_objective_score": 0.8574993814913219
+  },
+  {
+    "params": {
+      "amc_instance": 0.9998259923456632,
+      "amc_temporal": 1.2234086013145984,
+      "amc_margin": 1.2564836657412768,
+      "min_tau": 0.24637153171063597,
+      "max_tau": 0.4,
+      "t_max": 5.0,
+      "learning_rate": 0.005147802761633466,
+      "weight_decay": 0.0004079617366462364,
+      "dropout_rate": 0.3287627968594003,
+      "scheduler_method": "polynomial",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 3
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5429885351846577,
+    "memory_efficiency": 0.4885006607483553,
+    "multi_objective_score": 0.857447773111767
+  }
+]

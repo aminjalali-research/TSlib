@@ -33,7 +33,7 @@ echo "🔧 Testing Optimized TimeHUT (Skip Search)..."
 echo "⏱️  Starting timer..."
 START_TIME=$(date +%s)
 
-python train_optimized.py $DATASET optimized_skip_test --loader UCR --gpu 0 --batch-size $BATCH_SIZE --epochs $EPOCHS --eval --skip-search
+python train_unified_comprehensive.py $DATASET optimized_skip_test --loader UCR --gpu 0 --batch-size $BATCH_SIZE --epochs $EPOCHS --eval --scenario baseline
 
 END_TIME=$(date +%s)
 OPTIMIZED_SKIP_TIME=$((END_TIME - START_TIME))
@@ -45,7 +45,7 @@ echo "⚡ Testing Optimized TimeHUT (3 Search Steps)..."
 echo "⏱️  Starting timer..."
 START_TIME=$(date +%s)
 
-python train_optimized.py $DATASET optimized_search_test --loader UCR --gpu 0 --batch-size $BATCH_SIZE --epochs $EPOCHS --eval --search-steps 3
+python train_unified_comprehensive.py $DATASET optimized_search_test --loader UCR --gpu 0 --batch-size $BATCH_SIZE --epochs $EPOCHS --eval --scenario optimize_combined --search-steps 3
 
 END_TIME=$(date +%s)
 OPTIMIZED_SEARCH_TIME=$((END_TIME - START_TIME))

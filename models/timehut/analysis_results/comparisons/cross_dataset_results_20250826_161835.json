@@ -1,0 +1,311 @@
+{
+  "cross_dataset_analysis": [],
+  "ucr_analysis": [
+    {
+      "experiment_name": "ucr_small_datasets_Chinatown",
+      "dataset": "Chinatown",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 10
+      },
+      "execution_time": 0.01876354217529297,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.373968",
+      "category": "small_datasets",
+      "expected_behavior": "Fast convergence, may overfit easily"
+    },
+    {
+      "experiment_name": "ucr_small_datasets_Coffee",
+      "dataset": "Coffee",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 10
+      },
+      "execution_time": 0.01756143569946289,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.391800",
+      "category": "small_datasets",
+      "expected_behavior": "Fast convergence, may overfit easily"
+    },
+    {
+      "experiment_name": "ucr_small_datasets_ItalyPowerDemand",
+      "dataset": "ItalyPowerDemand",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 10
+      },
+      "execution_time": 0.01878809928894043,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.410868",
+      "category": "small_datasets",
+      "expected_behavior": "Fast convergence, may overfit easily"
+    },
+    {
+      "experiment_name": "ucr_small_datasets_MoteStrain",
+      "dataset": "MoteStrain",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 10
+      },
+      "execution_time": 0.018192768096923828,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.429377",
+      "category": "small_datasets",
+      "expected_behavior": "Fast convergence, may overfit easily"
+    },
+    {
+      "experiment_name": "ucr_medium_datasets_SyntheticControl",
+      "dataset": "SyntheticControl",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 20
+      },
+      "execution_time": 0.01804804801940918,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.447865",
+      "category": "medium_datasets",
+      "expected_behavior": "Balanced training, good generalization"
+    },
+    {
+      "experiment_name": "ucr_medium_datasets_TwoLeadECG",
+      "dataset": "TwoLeadECG",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 20
+      },
+      "execution_time": 0.017698049545288086,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.465983",
+      "category": "medium_datasets",
+      "expected_behavior": "Balanced training, good generalization"
+    },
+    {
+      "experiment_name": "ucr_medium_datasets_ECG200",
+      "dataset": "ECG200",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 20
+      },
+      "execution_time": 0.01823568344116211,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.484373",
+      "category": "medium_datasets",
+      "expected_behavior": "Balanced training, good generalization"
+    },
+    {
+      "experiment_name": "ucr_medium_datasets_FaceFour",
+      "dataset": "FaceFour",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 20
+      },
+      "execution_time": 0.01729726791381836,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.502194",
+      "category": "medium_datasets",
+      "expected_behavior": "Balanced training, good generalization"
+    },
+    {
+      "experiment_name": "ucr_large_datasets_ElectricDevices",
+      "dataset": "ElectricDevices",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 300,
+        "search_steps": 10
+      },
+      "execution_time": 0.017235755920410156,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.519743",
+      "category": "large_datasets",
+      "expected_behavior": "Slower training, better generalization"
+    },
+    {
+      "experiment_name": "ucr_large_datasets_FordA",
+      "dataset": "FordA",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 300,
+        "search_steps": 10
+      },
+      "execution_time": 0.0181429386138916,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.538262",
+      "category": "large_datasets",
+      "expected_behavior": "Slower training, better generalization"
+    },
+    {
+      "experiment_name": "ucr_large_datasets_FordB",
+      "dataset": "FordB",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 300,
+        "search_steps": 10
+      },
+      "execution_time": 0.018591880798339844,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.557242",
+      "category": "large_datasets",
+      "expected_behavior": "Slower training, better generalization"
+    },
+    {
+      "experiment_name": "ucr_large_datasets_StarLightCurves",
+      "dataset": "StarLightCurves",
+      "scenario": "ucr_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 300,
+        "search_steps": 10
+      },
+      "execution_time": 0.019062519073486328,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.576716",
+      "category": "large_datasets",
+      "expected_behavior": "Slower training, better generalization"
+    }
+  ],
+  "uea_analysis": [
+    {
+      "experiment_name": "uea_multivariate_analysis_AtrialFibrillation",
+      "dataset": "AtrialFibrillation",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.01822209358215332,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.595335",
+      "analysis_type": "multivariate_analysis"
+    },
+    {
+      "experiment_name": "uea_multivariate_analysis_BasicMotions",
+      "dataset": "BasicMotions",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.017732858657836914,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.613295",
+      "analysis_type": "multivariate_analysis"
+    },
+    {
+      "experiment_name": "uea_multivariate_analysis_Cricket",
+      "dataset": "Cricket",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.017340421676635742,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.630826",
+      "analysis_type": "multivariate_analysis"
+    },
+    {
+      "experiment_name": "uea_multivariate_analysis_Epilepsy",
+      "dataset": "Epilepsy",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 200,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.017174243927001953,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.648213",
+      "analysis_type": "multivariate_analysis"
+    },
+    {
+      "experiment_name": "uea_long_sequence_analysis_Handwriting",
+      "dataset": "Handwriting",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 400,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.01737809181213379,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.665814",
+      "analysis_type": "long_sequence_analysis"
+    },
+    {
+      "experiment_name": "uea_long_sequence_analysis_SpokenArabicDigits",
+      "dataset": "SpokenArabicDigits",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 400,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.017405986785888672,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.683519",
+      "analysis_type": "long_sequence_analysis"
+    },
+    {
+      "experiment_name": "uea_long_sequence_analysis_UWaveGestureLibrary",
+      "dataset": "UWaveGestureLibrary",
+      "scenario": "uea_analysis",
+      "config": {
+        "scenario": "optimize_combined",
+        "epochs": 400,
+        "search_steps": 15,
+        "loader": "UEA"
+      },
+      "execution_time": 0.01796889305114746,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.701806",
+      "analysis_type": "long_sequence_analysis"
+    }
+  ]
+}

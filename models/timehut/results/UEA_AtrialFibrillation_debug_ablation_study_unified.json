@@ -1,0 +1,256 @@
+{
+  "debug_results": [
+    {
+      "acc": 0.2,
+      "auprc": 0.32455266955266954,
+      "training_time": 9.953186273574829,
+      "final_loss": 1.8414950768152873,
+      "amc_setting": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Baseline (No AMC)",
+      "status": "success"
+    },
+    {
+      "acc": 0.2,
+      "auprc": 0.29834054834054835,
+      "training_time": 8.865326881408691,
+      "final_loss": 3.4459882577260337,
+      "amc_setting": {
+        "amc_instance": 1.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Instance AMC Only",
+      "status": "success"
+    },
+    {
+      "acc": 0.26666666666666666,
+      "auprc": 0.39786435786435775,
+      "training_time": 9.48519492149353,
+      "final_loss": 4.958846728006999,
+      "amc_setting": {
+        "amc_instance": 0.0,
+        "amc_temporal": 1.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Temporal AMC Only",
+      "status": "success"
+    },
+    {
+      "acc": 0.2,
+      "auprc": 0.3110582010582011,
+      "training_time": 11.903422355651855,
+      "final_loss": 4.394627571105957,
+      "amc_setting": {
+        "amc_instance": 0.5,
+        "amc_temporal": 0.5,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Both AMC Low",
+      "status": "success"
+    },
+    {
+      "acc": 0.3333333333333333,
+      "auprc": 0.4477248677248677,
+      "training_time": 11.53633427619934,
+      "final_loss": 8.668746789296469,
+      "amc_setting": {
+        "amc_instance": 1.0,
+        "amc_temporal": 1.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Both AMC Medium",
+      "status": "success"
+    },
+    {
+      "acc": 0.3333333333333333,
+      "auprc": 0.4302127502127502,
+      "training_time": 12.021360874176025,
+      "final_loss": 13.986664772033691,
+      "amc_setting": {
+        "amc_instance": 2.0,
+        "amc_temporal": 2.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Both AMC High",
+      "status": "success"
+    },
+    {
+      "acc": 0.4,
+      "auprc": 0.41155011655011653,
+      "training_time": 7.859848976135254,
+      "final_loss": 8.32968513170878,
+      "amc_setting": {
+        "amc_instance": 3.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Instance High",
+      "status": "success"
+    },
+    {
+      "acc": 0.26666666666666666,
+      "auprc": 0.3654534354534355,
+      "training_time": 9.614693403244019,
+      "final_loss": 8.886570453643799,
+      "amc_setting": {
+        "amc_instance": 0.0,
+        "amc_temporal": 3.0,
+        "amc_margin": 0.5
+      },
+      "temp_setting": {
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5,
+        "method": "cosine_annealing"
+      },
+      "config": {
+        "batch_size": 4,
+        "lr": 0.001,
+        "output_dims": 320,
+        "hidden_dims": 64,
+        "depth": 10,
+        "max_train_length": 3000
+      },
+      "config_name": "Temporal High",
+      "status": "success"
+    }
+  ],
+  "dataset": "AtrialFibrillation",
+  "run_name": "ablation_study",
+  "scenario": "debug",
+  "total_execution_time": 81.98700070381165,
+  "timestamp": "2025-08-27T12:20:02.336844",
+  "config": {
+    "batch_size": 8,
+    "lr": 0.001,
+    "repr_dims": 320,
+    "hidden_dims": 64,
+    "depth": 10,
+    "max_train_length": 3000,
+    "epochs": null,
+    "iters": null,
+    "seed": null,
+    "gpu": 0,
+    "max_threads": null,
+    "amc_instance": 0.5,
+    "amc_temporal": 0.5,
+    "amc_margin": 0.5,
+    "min_tau": 0.15,
+    "max_tau": 0.75,
+    "t_max": 10.5,
+    "temp_method": "cosine_annealing",
+    "irregular": 0.0,
+    "eval_protocol": "svm",
+    "method": "acc"
+  },
+  "optimization_config": {
+    "search_steps": 20,
+    "search_time": null,
+    "n_jobs": 1,
+    "early_stopping": true,
+    "statistical_significance": true,
+    "num_trials": 5
+  }
+}

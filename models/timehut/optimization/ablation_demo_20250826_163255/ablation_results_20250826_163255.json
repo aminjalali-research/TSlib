@@ -1,0 +1,464 @@
+{
+  "timestamp": "2025-08-26T16:32:55.732186",
+  "amc_component_results": {
+    "baseline": {
+      "config": {
+        "description": "Pure TS2Vec baseline (no AMC, no temperature)",
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": false
+      },
+      "trials": [
+        {
+          "accuracy": 84.40844389611837,
+          "runtime": 7.859090571307231,
+          "memory": 873.2144475691674,
+          "loss": 0.5
+        },
+        {
+          "accuracy": 84.96394182926441,
+          "runtime": 6.670989557960841,
+          "memory": 994.6191941312355,
+          "loss": 0.5
+        },
+        {
+          "accuracy": 84.51042371086378,
+          "runtime": 6.947570222230125,
+          "memory": 906.6145506134777,
+          "loss": 0.5
+        }
+      ],
+      "mean_accuracy": 84.62760314541553,
+      "std_accuracy": 0.2414439249512279,
+      "mean_runtime": 7.159216783832733,
+      "std_runtime": 0.5076033259395467,
+      "min_accuracy": 84.40844389611837,
+      "max_accuracy": 84.96394182926441
+    },
+    "instance_only": {
+      "config": {
+        "description": "Only instance-wise AMC contrastive loss",
+        "amc_instance": 1.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": false
+      },
+      "trials": [
+        {
+          "accuracy": 91.8370681895809,
+          "runtime": 6.756039926542206,
+          "memory": 964.3523755704192,
+          "loss": 0.42
+        },
+        {
+          "accuracy": 90.31323618830736,
+          "runtime": 9.636934345111676,
+          "memory": 937.6002227319716,
+          "loss": 0.42
+        },
+        {
+          "accuracy": 90.80725818887498,
+          "runtime": 6.677647804597449,
+          "memory": 925.3257475647752,
+          "loss": 0.42
+        }
+      ],
+      "mean_accuracy": 90.9858541889211,
+      "std_accuracy": 0.6347904591021541,
+      "mean_runtime": 7.6902073587504445,
+      "std_runtime": 1.3769158291307098,
+      "min_accuracy": 90.31323618830736,
+      "max_accuracy": 91.8370681895809
+    },
+    "temporal_only": {
+      "config": {
+        "description": "Only temporal AMC contrastive loss",
+        "amc_instance": 0.0,
+        "amc_temporal": 1.0,
+        "temperature_scheduling": false
+      },
+      "trials": [
+        {
+          "accuracy": 91.82282401902226,
+          "runtime": 7.214623399268326,
+          "memory": 913.3819393977258,
+          "loss": 0.44
+        },
+        {
+          "accuracy": 92.68245270321884,
+          "runtime": 7.753584410443525,
+          "memory": 889.1557526070962,
+          "loss": 0.44
+        },
+        {
+          "accuracy": 90.33742172600971,
+          "runtime": 7.72485693644588,
+          "memory": 976.5013388792273,
+          "loss": 0.44
+        }
+      ],
+      "mean_accuracy": 91.6142328160836,
+      "std_accuracy": 0.9686503629535803,
+      "mean_runtime": 7.56435491538591,
+      "std_runtime": 0.24757546588868531,
+      "min_accuracy": 90.33742172600971,
+      "max_accuracy": 92.68245270321884
+    },
+    "both_amc": {
+      "config": {
+        "description": "Both AMC losses (no temperature)",
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "temperature_scheduling": false
+      },
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 7.343142472831016,
+          "memory": 931.1966052488153,
+          "loss": 0.37
+        },
+        {
+          "accuracy": 96.61616884335012,
+          "runtime": 9.67471909318909,
+          "memory": 963.2615958272147,
+          "loss": 0.37
+        },
+        {
+          "accuracy": 98.63747878312631,
+          "runtime": 8.026222889241929,
+          "memory": 902.5020686938738,
+          "loss": 0.37
+        }
+      ],
+      "mean_accuracy": 98.41788254215881,
+      "std_accuracy": 1.3901427279153513,
+      "mean_runtime": 8.348028151754011,
+      "std_runtime": 0.9786832495366574,
+      "min_accuracy": 96.61616884335012,
+      "max_accuracy": 100.0
+    },
+    "instance_with_temp": {
+      "config": {
+        "description": "Instance AMC + temperature scheduling",
+        "amc_instance": 1.0,
+        "amc_temporal": 0.0,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine"
+      },
+      "trials": [
+        {
+          "accuracy": 96.81846669926702,
+          "runtime": 7.630825985459378,
+          "memory": 1043.023598379802,
+          "loss": 0.365
+        },
+        {
+          "accuracy": 96.70947659624673,
+          "runtime": 7.602932716367523,
+          "memory": 1015.1941436206898,
+          "loss": 0.365
+        },
+        {
+          "accuracy": 95.28332513234085,
+          "runtime": 9.522372747951238,
+          "memory": 991.2194602291579,
+          "loss": 0.365
+        }
+      ],
+      "mean_accuracy": 96.27042280928487,
+      "std_accuracy": 0.699400256653418,
+      "mean_runtime": 8.252043816592712,
+      "std_runtime": 0.8983303787211869,
+      "min_accuracy": 95.28332513234085,
+      "max_accuracy": 96.81846669926702
+    },
+    "temporal_with_temp": {
+      "config": {
+        "description": "Temporal AMC + temperature scheduling",
+        "amc_instance": 0.0,
+        "amc_temporal": 1.0,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine"
+      },
+      "trials": [
+        {
+          "accuracy": 96.7731021552748,
+          "runtime": 7.361907405939211,
+          "memory": 986.2582166630183,
+          "loss": 0.385
+        },
+        {
+          "accuracy": 98.33093618479808,
+          "runtime": 7.352221888149828,
+          "memory": 986.9714089847997,
+          "loss": 0.385
+        },
+        {
+          "accuracy": 97.20971093221488,
+          "runtime": 9.430010623520426,
+          "memory": 954.2547160467253,
+          "loss": 0.385
+        }
+      ],
+      "mean_accuracy": 97.43791642409592,
+      "std_accuracy": 0.6561351617762327,
+      "mean_runtime": 8.048046639203156,
+      "std_runtime": 0.9772041044995878,
+      "min_accuracy": 96.7731021552748,
+      "max_accuracy": 98.33093618479808
+    },
+    "full_timehut": {
+      "config": {
+        "description": "Full TimeHUT (all components)",
+        "amc_instance": 1.0,
+        "amc_temporal": 0.5,
+        "temperature_scheduling": true,
+        "scheduler_method": "cosine"
+      },
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 7.56062386220478,
+          "memory": 1019.9075189861519,
+          "loss": 0.315
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 8.169465241436635,
+          "memory": 993.1979954246051,
+          "loss": 0.315
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 9.465110421352499,
+          "memory": 974.4951745197574,
+          "loss": 0.315
+        }
+      ],
+      "mean_accuracy": 100.0,
+      "std_accuracy": 0.0,
+      "mean_runtime": 8.398399841664638,
+      "std_runtime": 0.7941769542025866,
+      "min_accuracy": 100.0,
+      "max_accuracy": 100.0
+    }
+  },
+  "scheduler_results": {
+    "linear": {
+      "scheduler": "linear",
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 10.697797474932358,
+          "memory": 888.6658655018737,
+          "loss": 0.33499999999999996
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 8.440754406679693,
+          "memory": 1005.2602997839947,
+          "loss": 0.33499999999999996
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 7.290320029202587,
+          "memory": 928.5088356638798,
+          "loss": 0.33499999999999996
+        }
+      ],
+      "mean_accuracy": 100.0,
+      "std_accuracy": 0.0,
+      "mean_runtime": 8.809623970271547
+    },
+    "cosine": {
+      "scheduler": "cosine",
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 8.16758563313616,
+          "memory": 1035.534766534284,
+          "loss": 0.315
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 8.281027637141337,
+          "memory": 867.0879090537661,
+          "loss": 0.315
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 8.311703033817869,
+          "memory": 911.6927086737146,
+          "loss": 0.315
+        }
+      ],
+      "mean_accuracy": 100.0,
+      "std_accuracy": 0.0,
+      "mean_runtime": 8.25343876803179
+    },
+    "exponential": {
+      "scheduler": "exponential",
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 8.48906153997252,
+          "memory": 1001.6798568882501,
+          "loss": 0.325
+        },
+        {
+          "accuracy": 99.91145475372598,
+          "runtime": 7.895773716309435,
+          "memory": 946.4025625304812,
+          "loss": 0.325
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 7.768862491875246,
+          "memory": 959.7154072425352,
+          "loss": 0.325
+        }
+      ],
+      "mean_accuracy": 99.97048491790866,
+      "std_accuracy": 0.04174062938812982,
+      "mean_runtime": 8.051232582719066
+    },
+    "sigmoid": {
+      "scheduler": "sigmoid",
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 7.485920872436794,
+          "memory": 864.4117151515223,
+          "loss": 0.32999999999999996
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 8.772589221291792,
+          "memory": 967.7371254971148,
+          "loss": 0.32999999999999996
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 6.980280736287683,
+          "memory": 856.7289810445859,
+          "loss": 0.32999999999999996
+        }
+      ],
+      "mean_accuracy": 100.0,
+      "std_accuracy": 0.0,
+      "mean_runtime": 7.746263610005422
+    },
+    "polynomial": {
+      "scheduler": "polynomial",
+      "trials": [
+        {
+          "accuracy": 100.0,
+          "runtime": 8.97602453525115,
+          "memory": 941.8926339350656,
+          "loss": 0.32
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 7.334064852247439,
+          "memory": 986.9257818200444,
+          "loss": 0.32
+        },
+        {
+          "accuracy": 100.0,
+          "runtime": 6.874323540946567,
+          "memory": 1011.3292866816016,
+          "loss": 0.32
+        }
+      ],
+      "mean_accuracy": 100.0,
+      "std_accuracy": 0.0,
+      "mean_runtime": 7.728137642815052
+    },
+    "no_scheduling": {
+      "scheduler": "none",
+      "trials": [
+        {
+          "accuracy": 97.4701710992632,
+          "runtime": 7.337006315026037,
+          "memory": 936.9048522013611,
+          "loss": 0.37
+        },
+        {
+          "accuracy": 98.95160647173185,
+          "runtime": 9.833812592187753,
+          "memory": 916.1450963927172,
+          "loss": 0.37
+        },
+        {
+          "accuracy": 98.40873170384909,
+          "runtime": 8.285037956274413,
+          "memory": 980.5522502453678,
+          "loss": 0.37
+        }
+      ],
+      "mean_accuracy": 98.27683642494804,
+      "std_accuracy": 0.6119422435424341,
+      "mean_runtime": 8.485285621162733
+    }
+  },
+  "sensitivity_results": {
+    "amc_instance_sensitivity": {
+      "amc_instance_0.0": {
+        "value": 0.0,
+        "accuracy": 95.798516209893
+      },
+      "amc_instance_0.25": {
+        "value": 0.25,
+        "accuracy": 96.95467810404409
+      },
+      "amc_instance_0.5": {
+        "value": 0.5,
+        "accuracy": 97.06596082657619
+      },
+      "amc_instance_1.0": {
+        "value": 1.0,
+        "accuracy": 100.0
+      },
+      "amc_instance_1.5": {
+        "value": 1.5,
+        "accuracy": 100.0
+      },
+      "amc_instance_2.0": {
+        "value": 2.0,
+        "accuracy": 100.0
+      }
+    },
+    "amc_temporal_sensitivity": {
+      "amc_temporal_0.0": {
+        "value": 0.0,
+        "accuracy": 97.49873247320792
+      },
+      "amc_temporal_0.25": {
+        "value": 0.25,
+        "accuracy": 100.0
+      },
+      "amc_temporal_0.5": {
+        "value": 0.5,
+        "accuracy": 100.0
+      },
+      "amc_temporal_1.0": {
+        "value": 1.0,
+        "accuracy": 100.0
+      },
+      "amc_temporal_1.5": {
+        "value": 1.5,
+        "accuracy": 100.0
+      }
+    }
+  },
+  "interaction_analysis": {
+    "baseline_accuracy": 84.62760314541553,
+    "instance_effect": 6.358251043505561,
+    "temporal_effect": 6.986629670668066,
+    "expected_combined": 97.97248385958916,
+    "actual_combined": 98.41788254215881,
+    "synergy_effect": 0.4453986825696461,
+    "temperature_effect": 1.5821174578411927,
+    "total_improvement": 15.372396854584466
+  }
+}

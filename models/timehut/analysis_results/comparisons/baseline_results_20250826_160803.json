@@ -1,0 +1,744 @@
+{
+  "baseline_experiments": [
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep0",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6652522087097168,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Chinatown/Chinatown_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:04.849549"
+    },
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep1",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6178009510040283,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Chinatown/Chinatown_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:06.467733"
+    },
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep2",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.612105131149292,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Chinatown/Chinatown_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:08.080205"
+    },
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep3",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.601806402206421,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Chinatown/Chinatown_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:09.682353"
+    },
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep4",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.588252305984497,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Chinatown/Chinatown_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:11.270947"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Chinatown_rep0",
+      "dataset": "Chinatown",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4027302265167236,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:12.674076"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Chinatown_rep1",
+      "dataset": "Chinatown",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4054267406463623,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:14.079996"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Chinatown_rep2",
+      "dataset": "Chinatown",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4144041538238525,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:15.494816"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Chinatown_rep3",
+      "dataset": "Chinatown",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.414219856262207,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:16.909415"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Chinatown_rep4",
+      "dataset": "Chinatown",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4027557373046875,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:18.312532"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep0",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6077141761779785,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/AtrialFibrillation/AtrialFibrillation_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:19.920605"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep1",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.5925307273864746,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/AtrialFibrillation/AtrialFibrillation_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:21.513534"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep2",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.731144905090332,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/AtrialFibrillation/AtrialFibrillation_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:23.245088"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep3",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.7242345809936523,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/AtrialFibrillation/AtrialFibrillation_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:24.969777"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep4",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6613049507141113,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/AtrialFibrillation/AtrialFibrillation_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:26.631508"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_AtrialFibrillation_rep0",
+      "dataset": "AtrialFibrillation",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.3996591567993164,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:28.031536"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_AtrialFibrillation_rep1",
+      "dataset": "AtrialFibrillation",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4051923751831055,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:29.437098"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_AtrialFibrillation_rep2",
+      "dataset": "AtrialFibrillation",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4190096855163574,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:30.856513"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_AtrialFibrillation_rep3",
+      "dataset": "AtrialFibrillation",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.410097599029541,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:32.266984"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_AtrialFibrillation_rep4",
+      "dataset": "AtrialFibrillation",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.445716142654419,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:33.713065"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep0",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6201014518737793,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/SyntheticControl/SyntheticControl_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:35.333562"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep1",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.5936391353607178,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/SyntheticControl/SyntheticControl_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:36.927568"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep2",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.5982732772827148,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/SyntheticControl/SyntheticControl_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:38.526199"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep3",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6095459461212158,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/SyntheticControl/SyntheticControl_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:40.136088"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep4",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.5913751125335693,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/SyntheticControl/SyntheticControl_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:41.727829"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_SyntheticControl_rep0",
+      "dataset": "SyntheticControl",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4039278030395508,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:43.132122"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_SyntheticControl_rep1",
+      "dataset": "SyntheticControl",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.405677318572998,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:44.538167"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_SyntheticControl_rep2",
+      "dataset": "SyntheticControl",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.418020486831665,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:45.956546"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_SyntheticControl_rep3",
+      "dataset": "SyntheticControl",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4040946960449219,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:47.361100"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_SyntheticControl_rep4",
+      "dataset": "SyntheticControl",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4134273529052734,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:48.774955"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep0",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6150884628295898,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Coffee/Coffee_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:50.390407"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep1",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.5882759094238281,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Coffee/Coffee_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:51.979032"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep2",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6011900901794434,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Coffee/Coffee_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:53.580654"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep3",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.6216425895690918,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Coffee/Coffee_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:55.202732"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep4",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 200,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 1.5951893329620361,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nTraceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 705, in <module>\n    train_data, train_labels, test_data, test_labels = datautils.load_UCR(args.dataset, args.dataroot)\n  File \"/home/amin/TSlib/models/timehut/datautils.py\", line 16, in load_UCR\n    train_df = pd.read_csv(train_file, sep='\\t', header=None)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/util/_decorators.py\", line 311, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 678, in read_csv\n    return _read(filepath_or_buffer, kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 575, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 932, in __init__\n    self._engine = self._make_engine(f, self.engine)\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/parsers/readers.py\", line 1216, in _make_engine\n    self.handles = get_handle(  # type: ignore[call-overload]\n  File \"/home/amin/anaconda3/envs/tslib/lib/python3.8/site-packages/pandas/io/common.py\", line 786, in get_handle\n    handle = open(\nFileNotFoundError: [Errno 2] No such file or directory: '/media/milad/DATA/TSResearch/datasets/UCR/Coffee/Coffee_TRAIN.tsv'\n",
+      "timestamp": "2025-08-26T16:08:56.798280"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Coffee_rep0",
+      "dataset": "Coffee",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4182720184326172,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:58.217003"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Coffee_rep1",
+      "dataset": "Coffee",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4057137966156006,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:08:59.623048"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Coffee_rep2",
+      "dataset": "Coffee",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.5907137393951416,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:09:01.214281"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Coffee_rep3",
+      "dataset": "Coffee",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.537212610244751,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:09:02.751943"
+    },
+    {
+      "experiment_name": "baseline_timehut_default_Coffee_rep4",
+      "dataset": "Coffee",
+      "scenario": "timehut_default",
+      "config": {
+        "scenario": "timehut_default",
+        "epochs": 200,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 1.4016690254211426,
+      "status": "failed",
+      "error": "<frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject\nusage: train_optimized.py [-h] --loader LOADER [--gpu GPU]\n                          [--batch-size BATCH_SIZE] [--lr LR]\n                          [--repr-dims REPR_DIMS]\n                          [--max-train-length MAX_TRAIN_LENGTH]\n                          [--iters ITERS] [--epochs EPOCHS]\n                          [--save-every SAVE_EVERY] [--seed SEED]\n                          [--max-threads MAX_THREADS] [--eval]\n                          [--irregular IRREGULAR] [--method METHOD]\n                          [--dataroot DATAROOT]\n                          [--scenario {baseline,amc_only,temp_only,amc_temp,optimize_amc,optimize_temp,optimize_combined,gridsearch_amc,gridsearch_temp,gridsearch_full,temp_cosine,temp_adaptive_cosine,temp_multi_cycle_cosine,temp_cosine_restarts,temp_linear,temp_exponential,temp_step,temp_polynomial,temp_sigmoid,temp_warmup_cosine,temp_constant,temp_cyclic}]\n                          [--skip-search] [--search-steps SEARCH_STEPS]\n                          [--amc-instance AMC_INSTANCE]\n                          [--amc-temporal AMC_TEMPORAL]\n                          [--amc-margin AMC_MARGIN] [--min-tau MIN_TAU]\n                          [--max-tau MAX_TAU] [--t-max T_MAX] [--phase PHASE]\n                          [--frequency FREQUENCY] [--bias BIAS]\n                          [--momentum MOMENTUM]\n                          [--adaptation-rate ADAPTATION_RATE]\n                          [--num-cycles NUM_CYCLES]\n                          [--decay-factor DECAY_FACTOR]\n                          [--restart-period RESTART_PERIOD]\n                          [--restart-mult RESTART_MULT]\n                          dataset run_name\ntrain_optimized.py: error: argument --scenario: invalid choice: 'timehut_default' (choose from 'baseline', 'amc_only', 'temp_only', 'amc_temp', 'optimize_amc', 'optimize_temp', 'optimize_combined', 'gridsearch_amc', 'gridsearch_temp', 'gridsearch_full', 'temp_cosine', 'temp_adaptive_cosine', 'temp_multi_cycle_cosine', 'temp_cosine_restarts', 'temp_linear', 'temp_exponential', 'temp_step', 'temp_polynomial', 'temp_sigmoid', 'temp_warmup_cosine', 'temp_constant', 'temp_cyclic')\n",
+      "timestamp": "2025-08-26T16:09:04.153988"
+    }
+  ]
+}

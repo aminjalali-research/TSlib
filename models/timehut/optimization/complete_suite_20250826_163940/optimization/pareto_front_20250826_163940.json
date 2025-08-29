@@ -1,0 +1,128 @@
+[
+  {
+    "params": {
+      "amc_instance": 1.5424813562514177,
+      "amc_temporal": 0.9230382283167604,
+      "amc_margin": 0.7372986321424719,
+      "min_tau": 0.14753608102920973,
+      "max_tau": 1.1061471719301066,
+      "t_max": 21.610941568127373,
+      "learning_rate": 0.00477254778144267,
+      "weight_decay": 0.0026215721759331938,
+      "dropout_rate": 0.12755215696412858,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 4
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5451641822335385,
+    "memory_efficiency": 0.49325381064815654,
+    "multi_objective_score": 0.8583582175115233
+  },
+  {
+    "params": {
+      "amc_instance": 1.5424813562514177,
+      "amc_temporal": 1.0136818108032755,
+      "amc_margin": 0.8580406493852546,
+      "min_tau": 0.05,
+      "max_tau": 1.0703842976518678,
+      "t_max": 21.610941568127373,
+      "learning_rate": 0.00477254778144267,
+      "weight_decay": 0.008857973520983416,
+      "dropout_rate": 0.21940512913926813,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 2
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5545626715471964,
+    "memory_efficiency": 0.4741943123272423,
+    "multi_objective_score": 0.8583319655421634
+  },
+  {
+    "params": {
+      "amc_instance": 1.5424813562514177,
+      "amc_temporal": 1.0355920374038798,
+      "amc_margin": 0.8580406493852546,
+      "min_tau": 0.05,
+      "max_tau": 1.0703842976518678,
+      "t_max": 21.610941568127373,
+      "learning_rate": 0.00477254778144267,
+      "weight_decay": 0.005990360752738124,
+      "dropout_rate": 0.21940512913926813,
+      "scheduler_method": "exponential",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 2
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5665377096767459,
+    "memory_efficiency": 0.4429350835266843,
+    "multi_objective_score": 0.8576010502880176
+  },
+  {
+    "params": {
+      "amc_instance": 1.5424813562514177,
+      "amc_temporal": 0.869485088630551,
+      "amc_margin": 0.8580406493852546,
+      "min_tau": 0.05,
+      "max_tau": 1.0703842976518678,
+      "t_max": 21.610941568127373,
+      "learning_rate": 0.00477254778144267,
+      "weight_decay": 0.005990360752738124,
+      "dropout_rate": 0.21940512913926813,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 2
+    },
+    "accuracy": 100.0,
+    "efficiency": 0.5584784988901998,
+    "memory_efficiency": 0.45489403571608167,
+    "multi_objective_score": 0.857185103349648
+  },
+  {
+    "params": {
+      "amc_instance": 0.5808296666111545,
+      "amc_temporal": 0.972891834847402,
+      "amc_margin": 0.32010992513307923,
+      "min_tau": 0.2872411808980275,
+      "max_tau": 1.0582821089568877,
+      "t_max": 15.587265903405571,
+      "learning_rate": 0.0028136348563585455,
+      "weight_decay": 0.00099765939915184,
+      "dropout_rate": 0.38418626667483,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 256,
+      "n_layers": 3
+    },
+    "accuracy": 98.6204330154337,
+    "efficiency": 0.5685371795097328,
+    "memory_efficiency": 0.44618926810602566,
+    "multi_objective_score": 0.7960088413254092
+  },
+  {
+    "params": {
+      "amc_instance": 0.6314643523795029,
+      "amc_temporal": 0.23409665974137273,
+      "amc_margin": 0.3074702935548346,
+      "min_tau": 0.31000308515714226,
+      "max_tau": 1.1401225379521915,
+      "t_max": 23.413354094643523,
+      "learning_rate": 0.0056829370805636945,
+      "weight_decay": 0.008441371371797728,
+      "dropout_rate": 0.38610783102233676,
+      "scheduler_method": "exponential",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 4
+    },
+    "accuracy": 94.7960062769211,
+    "efficiency": 0.5517282657803062,
+    "memory_efficiency": 0.47422229528078597,
+    "multi_objective_score": 0.7420200077313813
+  }
+]

@@ -1,0 +1,448 @@
+{
+  "baseline_experiments": [
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep0",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.01886296272277832,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.876818"
+    },
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep1",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.018538951873779297,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.895697"
+    },
+    {
+      "experiment_name": "baseline_baseline_Chinatown_rep2",
+      "dataset": "Chinatown",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.01784205436706543,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.913859"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Chinatown_rep0",
+      "dataset": "Chinatown",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.017223596572875977,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.931417"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Chinatown_rep1",
+      "dataset": "Chinatown",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.018633365631103516,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.950325"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Chinatown_rep2",
+      "dataset": "Chinatown",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.018357276916503906,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.969048"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep0",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.01892256736755371,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:35.988659"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep1",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.018318891525268555,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.007466"
+    },
+    {
+      "experiment_name": "baseline_baseline_AtrialFibrillation_rep2",
+      "dataset": "AtrialFibrillation",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.0187835693359375,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.026652"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_AtrialFibrillation_rep0",
+      "dataset": "AtrialFibrillation",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.017500638961791992,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.044806"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_AtrialFibrillation_rep1",
+      "dataset": "AtrialFibrillation",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.016982078552246094,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.062003"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_AtrialFibrillation_rep2",
+      "dataset": "AtrialFibrillation",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.01745319366455078,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.079780"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep0",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.017394304275512695,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.097524"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep1",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.017204999923706055,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.115081"
+    },
+    {
+      "experiment_name": "baseline_baseline_SyntheticControl_rep2",
+      "dataset": "SyntheticControl",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.01743793487548828,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.132801"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_SyntheticControl_rep0",
+      "dataset": "SyntheticControl",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.017944812774658203,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.151061"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_SyntheticControl_rep1",
+      "dataset": "SyntheticControl",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.018472909927368164,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.170260"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_SyntheticControl_rep2",
+      "dataset": "SyntheticControl",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.018906116485595703,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.189506"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep0",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.018220186233520508,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.208066"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep1",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.018608570098876953,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.226991"
+    },
+    {
+      "experiment_name": "baseline_baseline_Coffee_rep2",
+      "dataset": "Coffee",
+      "scenario": "baseline",
+      "config": {
+        "scenario": "baseline",
+        "epochs": 100,
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5,
+        "temperature_scheduling": false
+      },
+      "execution_time": 0.018083572387695312,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.245462"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Coffee_rep0",
+      "dataset": "Coffee",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.01763916015625,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.263375"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Coffee_rep1",
+      "dataset": "Coffee",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.0178372859954834,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.281467"
+    },
+    {
+      "experiment_name": "baseline_amc_temp_Coffee_rep2",
+      "dataset": "Coffee",
+      "scenario": "amc_temp",
+      "config": {
+        "scenario": "amc_temp",
+        "epochs": 100,
+        "amc_instance": 0.1,
+        "amc_temporal": 0.1,
+        "amc_margin": 0.5,
+        "temperature_scheduling": true,
+        "min_tau": 0.15,
+        "max_tau": 0.75,
+        "t_max": 10.5
+      },
+      "execution_time": 0.017009496688842773,
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/home/amin/TSlib/models/timehut/train_optimized.py\", line 1, in <module>\n    import torch\nModuleNotFoundError: No module named 'torch'\n",
+      "timestamp": "2025-08-26T16:18:36.298736"
+    }
+  ]
+}

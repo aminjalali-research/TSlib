@@ -24,7 +24,7 @@ datasets/
 *.pt
 *.safetensors
 
-# Non-working model directories (exclude models that don't produce results)
+# Exclude specific model directories (keep only: softclt, timehut, timesurl, ts2vec, vq_mtm)
 models/ctrl/
 models/dynamic_badpair/
 models/lead/

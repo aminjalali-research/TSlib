@@ -1,0 +1,129 @@
+{
+  "systematic_ablations": {
+    "description": "Comprehensive ablation studies for TimeHUT components",
+    
+    "amc_ablations": {
+      "description": "AMC (Adaptive Margin Contrastive) loss ablations",
+      "parameter_grid": {
+        "amc_instance": [0.0, 0.1, 0.5, 1.0, 2.0, 5.0],
+        "amc_temporal": [0.0, 0.1, 0.5, 1.0, 2.0, 5.0],
+        "amc_margin": [0.1, 0.3, 0.5, 0.7, 1.0]
+      },
+      "baseline": {
+        "amc_instance": 0.0,
+        "amc_temporal": 0.0,
+        "amc_margin": 0.5
+      },
+      "datasets": ["Chinatown", "AtrialFibrillation"],
+      "epochs": 200,
+      "repeats": 3
+    },
+    
+    "temperature_ablations": {
+      "description": "Temperature scheduling ablations",
+      "schedulers": {
+        "none": {"enabled": false},
+        "sigmoid": {"method": "sigmoid"},
+        "linear": {"method": "linear"},
+        "exponential": {"method": "exponential"},
+        "cosine": {"method": "cosine"},
+        "step": {"method": "step"},
+        "polynomial": {"method": "polynomial"},
+        "warmup_cosine": {"method": "warmup_cosine"}
+      },
+      "parameter_grid": {
+        "min_tau": [0.05, 0.1, 0.15, 0.2, 0.3],
+        "max_tau": [0.6, 0.7, 0.8, 0.9, 1.0],
+        "t_max": [5, 10, 15, 20, 25]
+      },
+      "datasets": ["Chinatown", "SyntheticControl"],
+      "epochs": 200,
+      "repeats": 3
+    },
+    
+    "combined_ablations": {
+      "description": "AMC + Temperature scheduling combined effects",
+      "scenarios": [
+        {
+          "name": "baseline",
+          "amc_instance": 0.0,
+          "amc_temporal": 0.0,
+          "temperature_scheduling": false
+        },
+        {
+          "name": "amc_only",
+          "amc_instance": 1.0,
+          "amc_temporal": 0.5,
+          "temperature_scheduling": false
+        },
+        {
+          "name": "temp_only",
+          "amc_instance": 0.0,
+          "amc_temporal": 0.0,
+          "temperature_scheduling": true,
+          "min_tau": 0.15,
+          "max_tau": 0.75,
+          "t_max": 10.5
+        },
+        {
+          "name": "combined",
+          "amc_instance": 1.0,
+          "amc_temporal": 0.5,
+          "temperature_scheduling": true,
+          "min_tau": 0.15,
+          "max_tau": 0.75,
+          "t_max": 10.5
+        }
+      ],
+      "datasets": ["Chinatown", "AtrialFibrillation", "SyntheticControl"],
+      "epochs": 200,
+      "repeats": 5
+    }
+  },
+  
+  "performance_ablations": {
+    "description": "Performance optimization ablations",
+    
+    "precision_ablations": {
+      "variants": ["fp16", "fp32", "mixed_precision"],
+      "datasets": ["Chinatown", "SyntheticControl"],
+      "epochs": 100,
+      "metrics": ["training_time", "memory_usage", "accuracy_degradation"]
+    },
+    
+    "batch_size_ablations": {
+      "batch_sizes": [8, 16, 32, 64, 128],
+      "datasets": ["Chinatown", "AtrialFibrillation"],
+      "dataset_size_categories": {
+        "small": "<500",
+        "medium": "500-2000", 
+        "large": ">2000"
+      },
+      "epochs": 100
+    },
+    
+    "memory_optimization_ablations": {
+      "strategies": [
+        {"name": "baseline", "aggressive_gc": false, "cuda_empty_cache": false},
+        {"name": "moderate", "aggressive_gc": true, "cuda_empty_cache": true},
+        {"name": "aggressive", "aggressive_gc": true, "cuda_empty_cache": true, "pin_memory": true}
+      ],
+      "datasets": ["Chinatown"],
+      "epochs": 100
+    }
+  },
+  
+  "loss_function_ablations": {
+    "description": "Loss function component analysis",
+    "components": {
+      "instance_contrastive": [true, false],
+      "temporal_contrastive": [true, false],
+      "instance_discriminative": [true, false],
+      "temporal_discriminative": [true, false]
+    },
+    "loss_weights": [0.1, 0.5, 1.0, 2.0, 5.0],
+    "datasets": ["Chinatown", "AtrialFibrillation"],
+    "epochs": 100,
+    "repeats": 3
+  }
+}

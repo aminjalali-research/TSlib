@@ -128,9 +128,9 @@ def temporal_contrastive_loss(z1, z2, tau=1.0, amc_coef=0, amc_margin=0.5,
         tau_adaptive = tau * (1. + temp_alpha * (A - temp_A0))
         logits = -F.log_softmax(logits, dim=-1) / tau_adaptive
     else:
-        # Fixed temperature from losses.py (more efficient)
-        logits = -F.log_softmax(logits, dim=-1)
+        # Fixed temperature from losses.py (more efficient) - CORRECTED ORDER
         logits = torch.div(logits, tau)
+        logits = -F.log_softmax(logits, dim=-1)
     
     loss = (logits[:, t, T + t - 1].mean() + logits[:, T + t, t].mean()) / 2
     

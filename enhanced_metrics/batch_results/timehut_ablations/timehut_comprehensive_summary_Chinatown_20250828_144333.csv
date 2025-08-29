@@ -1,0 +1,12 @@
+Scenario,Description,Dataset,Accuracy,Runtime_Seconds,Batch_Size,Epochs,AMC_Instance,AMC_Temporal,AMC_Margin,Min_Tau,Max_Tau,Temp_Method,Status
+Baseline,Standard TS2vec without any enhancements,Chinatown,0.9825072886297376,9.101265668869019,8,200,0.0,0.0,0.5,0.4,0.4,fixed,success
+AMC_Instance,Angular Margin Contrastive for instance discrimination,Chinatown,0.9825072886297376,10.600468397140503,8,200,1.0,0.0,0.5,0.4,0.4,fixed,success
+AMC_Temporal,Angular Margin Contrastive for temporal relationships,Chinatown,0.9825072886297376,11.294739246368408,8,200,0.0,1.0,0.5,0.4,0.4,fixed,success
+Temperature_Scheduling,Cosine annealing temperature scheduling (0.15-0.75),Chinatown,0.9854227405247813,8.555065870285034,8,200,0.0,0.0,0.5,0.15,0.75,cosine_annealing,success
+AMC_Both,Combined AMC instance and temporal losses,Chinatown,0.9708454810495627,12.976454734802246,8,200,0.7,0.5,0.5,0.4,0.4,fixed,success
+AMC_Temperature_Scheduling,AMC losses with temperature scheduling (0.15-0.75),Chinatown,0.9737609329446064,12.375326871871948,8,200,1.0,0.5,0.5,0.15,0.75,cosine_annealing,success
+High_AMC_Instance,High AMC instance coefficient (2.0),Chinatown,0.9883381924198251,12.468760251998901,8,200,2.0,0.5,0.4,0.15,0.75,cosine_annealing,success
+High_AMC_Temporal,High AMC temporal coefficient (2.0),Chinatown,0.9708454810495627,12.30604338645935,8,200,1.0,2.0,0.4,0.15,0.75,cosine_annealing,success
+Tight_Temperature,Tight temperature range (0.1-0.5) with AMC,Chinatown,0.9795918367346939,12.371409893035889,8,200,1.0,0.5,0.5,0.1,0.5,cosine_annealing,success
+Wide_Temperature,Wide temperature range (0.05-0.9) with AMC,Chinatown,0.9825072886297376,12.59690546989441,8,200,1.0,0.5,0.5,0.05,0.9,cosine_annealing,success
+Optimized_Efficient,"High-performance configuration (AMC 10.0/7.53, temp 0.05-0.76)",Chinatown,0.0,14.396612882614136,8,200,10.0,7.53,0.3,0.05,0.76,cosine_annealing,success

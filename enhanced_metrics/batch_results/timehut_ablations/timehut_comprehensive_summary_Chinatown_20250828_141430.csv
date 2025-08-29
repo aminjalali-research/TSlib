@@ -1,0 +1,1 @@
+Scenario,Description,Dataset,Accuracy,Runtime_Seconds,Batch_Size,Epochs,AMC_Instance,AMC_Temporal,AMC_Margin,Min_Tau,Max_Tau,Temp_Method,Status

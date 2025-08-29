@@ -1,0 +1,102 @@
+{
+  "timestamp": "2025-08-26T16:39:40.522503",
+  "summary": {
+    "ablation_configurations_tested": 7,
+    "optimization_evaluations": 326,
+    "pareto_front_solutions": 6,
+    "total_analysis_time": "~30 minutes",
+    "key_insight": "Combined approach provides comprehensive understanding"
+  },
+  "component_analysis": {
+    "baseline_accuracy": 83.90161496210266,
+    "full_timehut_accuracy": 100.0,
+    "total_improvement": 16.098385037897344,
+    "component_effects": {
+      "instance_only": {
+        "accuracy": 92.43762945248191,
+        "effect": 8.536014490379259,
+        "std_dev": 1.687712595564703
+      },
+      "temporal_only": {
+        "accuracy": 91.55004878752801,
+        "effect": 7.648433825425357,
+        "std_dev": 0.6295342833566373
+      },
+      "both_amc": {
+        "accuracy": 97.42025894421825,
+        "effect": 13.518643982115591,
+        "std_dev": 0.14242794222099198
+      },
+      "instance_with_temp": {
+        "accuracy": 98.33550800797597,
+        "effect": 14.433893045873319,
+        "std_dev": 1.3139869731167624
+      },
+      "temporal_with_temp": {
+        "accuracy": 94.82312936421816,
+        "effect": 10.921514402115506,
+        "std_dev": 0.4806882804737221
+      },
+      "full_timehut": {
+        "accuracy": 100.0,
+        "effect": 16.098385037897344,
+        "std_dev": 0.0
+      }
+    }
+  },
+  "optimization_validation": {
+    "best_configuration": {
+      "amc_instance": 1.5424813562514177,
+      "amc_temporal": 0.9230382283167604,
+      "amc_margin": 0.7372986321424719,
+      "min_tau": 0.14753608102920973,
+      "max_tau": 1.1061471719301066,
+      "t_max": 21.610941568127373,
+      "learning_rate": 0.00477254778144267,
+      "weight_decay": 0.0026215721759331938,
+      "dropout_rate": 0.12755215696412858,
+      "scheduler_method": "cosine",
+      "batch_size": 4,
+      "hidden_dim": 128,
+      "n_layers": 4
+    },
+    "best_multi_objective_score": 0.8583582175115233,
+    "optimization_method": "evolutionary_algorithm",
+    "generations": 18,
+    "total_evaluations": 326,
+    "component_validation": {
+      "amc_instance_validation": {
+        "optimization_value": 1.5424813562514177,
+        "ablation_best_config_value": 1.0,
+        "agreement": false
+      },
+      "amc_temporal_validation": {
+        "optimization_value": 0.9230382283167604,
+        "ablation_best_config_value": 0.5,
+        "agreement": true
+      },
+      "scheduler_validation": {
+        "optimization_choice": "cosine",
+        "ablation_best_choice": "cosine",
+        "agreement": true
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "category": "AMC Components",
+      "recommendation": "Use 'full_timehut' configuration as baseline",
+      "rationale": "Achieved 100.00% accuracy"
+    },
+    {
+      "category": "Temperature Scheduling",
+      "recommendation": "Use 'cosine' scheduler method",
+      "rationale": "Best performance in ablation studies"
+    },
+    {
+      "category": "Hyperparameter Optimization",
+      "recommendation": "Use evolutionary optimization for fine-tuning",
+      "rationale": "Multi-objective score: 0.8584"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "accuracy_champion": {
+    "model": "TimesURL",
+    "dataset": "Chinatown",
+    "accuracy": 0.9854,
+    "time_per_epoch": 0.0,
+    "peak_memory_mb": 0,
+    "flops_per_epoch": 112641278.15707481
+  },
+  "flops_efficiency_champion": {
+    "model": "TS2vec",
+    "dataset": "Chinatown",
+    "flops_efficiency": 20.10985703519138,
+    "accuracy": 0.9708,
+    "flops_per_epoch": 48274833.49588921
+  }
+}
